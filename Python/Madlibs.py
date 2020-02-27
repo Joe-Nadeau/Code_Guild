@@ -18,11 +18,19 @@ from random import randint
 
 user_nouns = input('list three nouns separated by commas: ')
 noun_list = user_nouns.split(', ')
+n = randint(0,2)
 
 user_verbs = input('list three verbs sparated by commas: ')
 verb_list = user_verbs.split(', ')
+v = randint(0,2)
 
 user_adjectives = input('list three adjectives separated by commas: ')
 adjective_list = user_adjectives.split(', ')
+a = randint(0, 2)
 
-print(f'We\'ve been {verb_list}ing most our {noun_1} living in a {noun_2}\'s paradise. We don\'t {verb_2}, we all {verb_3} {adjective_1}, living in a {noun_2} paradise. ')
+print(f'We\'ve been {verb_list[v]}ing most our {noun_list[n]} living in a {noun_list[n]}\'s paradise. We don\'t {verb_list[v]}, we all {verb_list[v]} {adjective_list[a]}, living in a {noun_list[n]} paradise. ')
+
+# x = randint(0,2) # callin the function randint and storing the value it returns in the variable 'x'
+# print(x)
+# print(user_nouns) # prints list of strings saved in variable 'user_nouns'
+# print(user_nouns[x]) # prints the 'x'th element of user_nouns
