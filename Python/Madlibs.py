@@ -28,7 +28,17 @@ user_adjectives = input('list three adjectives separated by commas: ')
 adjective_list = user_adjectives.split(', ')
 a = randint(0, 2)
 
-print(f'We\'ve been {verb_list[v]}ing most our {noun_list[n]} living in a {noun_list[n]}\'s paradise. We don\'t {verb_list[v]}, we all {verb_list[v]} {adjective_list[a]}, living in a {noun_list[n]} paradise. ')
+read_story = 'y'
+
+while read_story == 'y':
+    print('Would you like to read the Madlib?')
+    read_story = input('Type y for yes or n for no: ')
+    if read_story != 'y':   
+        break
+    print(f'We\'ve been {verb_list[v]}ing most our {noun_list[n]} living in a {noun_list[n]}\'s paradise. We don\'t {verb_list[v]}, we all {verb_list[v]} {adjective_list[a]}, living in a {noun_list[n]} paradise. ')
+print('Thanks for playing Madlibs with me!😀')
+
+
 
 # x = randint(0,2) # callin the function randint and storing the value it returns in the variable 'x'
 # print(x)
