@@ -31,7 +31,11 @@ def winner():
     
 def main():
 
-    winner()
-
+    while True:
+        winner()
+        play_again = input('Would you like to play again?: <y/n>')
+        if play_again == 'n':
+            print('Fine! I thought humans were supposed to be fun. Are you sure you\'re not a computer?')
+            break        
 main()
         
