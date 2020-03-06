@@ -13,14 +13,14 @@
 
 def main():
     
-    pennies = (int(input('Enter the $ amount in pennies that you would like converted into larger coins:  \n')))
-    
+    user_money = (float(input('Enter the $ amount that you would like converted into coins:  \n')))
+    pennies = user_money * 100
 
     def coin_converter():
-        quarters = pennies // 25
-        dimes = pennies % 25 // 10
-        nickles = pennies % 25 % 10 // 5
-        leftover_pennies = pennies % 25 % 10 % 5
+        quarters = (int(pennies // 25))
+        dimes = (int(pennies % 25 // 10))
+        nickles = (int(pennies % 25 % 10 // 5))
+        leftover_pennies = (int(pennies % 25 % 10 % 5))
         
         print(f"You have {quarters} quarters, {dimes} dimes, {nickles} nickles, and {leftover_pennies} pennies left over")
     
