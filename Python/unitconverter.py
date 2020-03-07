@@ -7,56 +7,47 @@ def main():
 
     print('\n*************************************************************************************************\nThis program will convert units of measure for distance.\n*************************************************************************************************')
     
-    def inches_to_meters():
+    def from_units_to_meters(distance, from_units):
 
-        dist_inches = float(input('Enter the distance in inches: '))
-        dist_ItM = dist_inches * .0254
-        print(f'{dist_inches} inches is {dist_ItM} meters.')
+        if from_units == 'in':
+            return distance * .0254
+        elif from_units == 'ft':
+            return distance * .3048
+        elif from_units == 'yd':
+            return distance * .9144
+        elif from_units == 'm':
+            return distance
+        elif from_units == 'km':
+            return distance * 1000
+        elif from_units == 'mi':
+            return distance * 1609.34
 
-    def yards_to_meters():
+    def meters_to_units(x):
 
-        dist_yards = float(input('Enter the distance in yards: '))
-        dist_YtoM = dist_yards * .9144
-        print(f'{dist_yards} yards is {dist_YtoM} meters.')
+        if to_units == 'in':
+            return x / .0254
+        elif to_units == 'ft':
+            return x / .3048
+        elif to_units == 'yd':
+            return x / .9144
+        elif to_units == 'm':
+            return x / distance
+        elif to_units == 'km':
+            return x / 1000
+        elif to_units == 'mi':
+            return x / 1609.34
 
-    def feet_to_meters():
-        
-        dist_feet = float(input('Enter the distance in feet:  '))
-        dist_FtM = dist_feet * 0.3048
-        print(f"{dist_feet} feet is {dist_FtM} meters.")
+    
 
-    def meters_to_meters():
+    from_units = input('What is the input unit? \n in = inches \n ft = feet \n yd = yards \n m = meters \n km = kilometers \n mi = miles \n\n')
 
-        dist_meters = float(input('Enter the distance in meters: '))
-        dist_MtM = dist_meters * 1
-        print(f"{dist_meters} meters is {dist_MtM} meters....seems kind of obvious.")
+    distance = float(input('What is the distance? \n\n'))
 
-    def kms_to_meters():
+    to_units = input('What is the output unit? \n in = inches \n ft = feet \n yd = yards \n m = meters \n km = kilometers \n mi = miles \n\n' )
 
-        dist_kilometers = float(input('Enter the distance in kilometers: '))
-        dist_KMtoM = dist_kilometers * 1000
-        print(f'{dist_kilometers} kilometers is {dist_KMtoM} meters.')
+    x = from_units_to_meters(distance, from_units)
+    y = meters_to_units(x)
 
-    def miles_to_meters():
-
-        dist_miles = float(input('Enter the distance in miles:  '))
-        dist_MitoM = dist_miles * 1609.34
-        print(f'{dist_miles} miles is {dist_MitoM} meters.')
-
-    unit_of_measure = input('\n Which unit of measure would you like to convert to meters? \nThe options are: \n\n feet\n meters\n kilometers\n miles\n inches\n yards \n').lower()
-
-    if unit_of_measure == 'feet': 
-        feet_to_meters()
-    elif unit_of_measure == 'meters':
-        print('You\'re reall going to make me do this?....ok, here we go')
-        meters_to_meters()
-    elif unit_of_measure == 'kilometers':
-        kms_to_meters()
-    elif unit_of_measure == 'miles':
-        miles_to_meters()
-    elif unit_of_measure == 'yards':
-        yards_to_meters()
-    elif unit_of_measure == 'inches':
-        inches_to_meters()
+    print(f'\n{distance} {from_units} is {y} {to_units}\n')
 
 main()
