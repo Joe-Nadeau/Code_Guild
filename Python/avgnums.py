@@ -1,3 +1,8 @@
+#PDX Code Guild
+#Lab 10
+#Average of numbers
+#Joey Nadeau
+
 def main():
     nums = []
     def user_numlist():
