@@ -33,7 +33,9 @@ def main():
                 print(f'Whoa maaaan, are you psychic!? The number I chose was {x}. You got it right!')
                 print(f'It took you {guess_count} guesses to get it right.')
                 break
-            else:
-                print('Nope, that\'s not it. Try again')
+            elif user_guess > x:
+                print('Your guess was too high. Try again.')
+            elif user_guess < x:
+                print('Your guess was too low. Try again.')
 
 main()
