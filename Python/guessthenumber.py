@@ -22,17 +22,18 @@ def main():
         x = random.randint(1,10)
 
         a = 0
+        guess_count = 0
 
-        while a <= 10:
-            a += 1
+        while True:
+
             user_guess = int(input('What is your guess?'))
+            guess_count += 1
 
             if user_guess == x:
                 print(f'Whoa maaaan, are you psychic!? The number I chose was {x}. You got it right!')
+                print(f'It took you {guess_count} guesses to get it right.')
                 break
             else:
                 print('Nope, that\'s not it. Try again')
-                if a == 10:
-                    print('Wow, you\'re really bad at this! You lose.')
 
 main()
