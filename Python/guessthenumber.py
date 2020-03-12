@@ -23,19 +23,33 @@ def main():
 
         a = 0
         guess_count = 0
+        last_guess = 0
 
         while True:
 
-            user_guess = int(input('What is your guess?'))
+            current_guess = int(input('What is your guess?'))
             guess_count += 1
+            previous_diff = abs(x - last_guess) 
+            current_diff = abs(x - current_guess)
 
-            if user_guess == x:
+            if current_guess == x:
                 print(f'Whoa maaaan, are you psychic!? The number I chose was {x}. You got it right!')
                 print(f'It took you {guess_count} guesses to get it right.')
                 break
-            elif user_guess > x:
-                print('Your guess was too high. Try again.')
-            elif user_guess < x:
-                print('Your guess was too low. Try again.')
+            elif current_guess > x:
+                print('Your guess is too high. Try again.')
+            elif current_guess < x:
+                print('Your guess is too low. Try again.')
+            
+            if guess_count > 1:
+                if previous_diff > current_diff:
+                    print("You\'re getting warmer.")
+                elif previous_diff < current_diff:
+                    print("You\'re getting colder.")
+                else:
+                    print('You guessed the same number goober. Try again.')
+            
+            last_guess = current_guess
+            
 
 main()
