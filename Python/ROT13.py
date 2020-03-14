@@ -7,9 +7,9 @@ import string
 
 def main():
 
-    user_string = input("Write a message that you wan't encrypted with a cypher, using only uper and lowercase letters and spaces: ")
+    user_string = input("Write a message that you wan't encrypted with a cypher: ")
     alphabet = string.ascii_letters
-    rot_13_var = 'nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM'
+    #rot_13_var = 'nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM'
     cyphered_string = ''
     cy_list = []
     
@@ -22,7 +22,7 @@ def main():
                 #looks for the character from the user's string and matches it to the corresponding character in ascii_letters. Then it stores that letter's indice in the variable to_be_replaced.
                 to_be_replaced = alphabet.find(char)
                 #looks at the indice stored in to_be_replaced, matches it to the same indice in rot_13_var and adds the character associated with that indice to cy_list.
-                cy_list.append(rot_13_var[to_be_replaced])
+                cy_list.append([to_be_replaced +13] % 52) #<---Do this idea to line 23 instead...
 
             else:
                 cy_list.append(char)
