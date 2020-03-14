@@ -19,10 +19,10 @@ def main():
         for char in user_string:
 
             if char in alphabet:
-                #looks for the character from the user's string and matches it to the corresponding character in ascii_letters. Then it stores that letter's indice in the variable to_be_replaced.
-                to_be_replaced = alphabet.find(char)
+                #looks for the character from the user's string and matches it to the corresponding character in ascii_letters. Then it stores that letter's indice in the variable to_be_replaced and adds 13 to that indice
+                to_be_replaced = (alphabet.find(char) + 13) % 52
                 #looks at the indice stored in to_be_replaced, matches it to the same indice in rot_13_var and adds the character associated with that indice to cy_list.
-                cy_list.append([to_be_replaced +13] % 52) #<---Do this idea to line 23 instead...
+                cy_list.append(alphabet[to_be_replaced])
 
             else:
                 cy_list.append(char)
