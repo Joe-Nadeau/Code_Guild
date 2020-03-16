@@ -24,24 +24,26 @@ def pick6():
 
 def num_matches(winner, ticket):
 
+    match = 0
+
     for i in winner:
         
         if i in winner == i in ticket:
             match += 1
         else:
             match = match
-        print(match)
+        return match
 
 def main():
 
+    balance = 0
     winner = pick6()
     ticket = pick6()
-    match = 0
-    balance = 0
 
+    num_matches(winner, ticket)
     print(winner)
     print(ticket)
-    num_matches(winner, ticket)
+    print(num_matches)
     
 
 main()
