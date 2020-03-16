@@ -20,30 +20,53 @@ def pick6():
     num_list = []
     for i in range (6):
         num_list.append(random.randrange(0, 99))
-    print(num_list)
+    return num_list
 
 def num_matches(winner, ticket):
 
-    match = 0
+    matches = 0
 
     for i in winner:
         
         if i in winner == i in ticket:
-            match += 1
+            matches += 1
         else:
-            match = match
-        return match
+            matches = matches
+        return matches
+        print(f'There were {matches} matching numbers.'
+
+def balance_tracker(num_matches(winner, ticket)):
+    balance = 0
+
+    if match == 0:
+        balance = balance - 2
+    elif match == 1:
+        balance = (balance + 4) - 2
+    elif match == 2:
+        balance = (balance + 7)- 2
+    elif match == 3:
+        balance = (balance + 100) - 2
+    elif match ==4:
+        balance = (balance + 50000) - 2
+    elif match == 5:
+        balance = (balance + 1000000) - 2
+    elif match == 6:
+        blance = (balance + 25000000) - 2
+    return balance
+
 
 def main():
-
-    balance = 0
-    winner = pick6()
-    ticket = pick6()
-
-    num_matches(winner, ticket)
-    print(winner)
-    print(ticket)
-    print(num_matches)
-    
+    final_balance = 0
+    x = 0
+    while x < 100:
+       
+        winner = pick6()
+        print(f'The winning numbers are: {winner}')
+        ticket = pick6()
+        print(f'Your ticket numbers were: {ticket}')
+        num_matches(winner, ticket)
+        final_balance = final_balance + balance_tracker(match)
+        x += 1
+    print(f'Your final balance is: ${final_balance}')
 
 main()
