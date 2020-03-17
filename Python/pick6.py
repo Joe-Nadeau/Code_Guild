@@ -33,24 +33,23 @@ def num_matches(winner, ticket):
         else:
             matches = matches
         return matches
-        print(f'There were {matches} matching numbers.'
 
-def balance_tracker(num_matches(winner, ticket)):
+def balance_tracker(matches):
     balance = 0
 
-    if match == 0:
+    if matches == 0:
         balance = balance - 2
-    elif match == 1:
+    elif matches == 1:
         balance = (balance + 4) - 2
-    elif match == 2:
+    elif matches == 2:
         balance = (balance + 7)- 2
-    elif match == 3:
+    elif matches == 3:
         balance = (balance + 100) - 2
-    elif match ==4:
+    elif matches ==4:
         balance = (balance + 50000) - 2
-    elif match == 5:
+    elif matches == 5:
         balance = (balance + 1000000) - 2
-    elif match == 6:
+    elif matches == 6:
         blance = (balance + 25000000) - 2
     return balance
 
@@ -65,7 +64,7 @@ def main():
         ticket = pick6()
         print(f'Your ticket numbers were: {ticket}')
         num_matches(winner, ticket)
-        final_balance = final_balance + balance_tracker(match)
+        final_balance = final_balance + balance_tracker(matches)
         x += 1
     print(f'Your final balance is: ${final_balance}')
 
