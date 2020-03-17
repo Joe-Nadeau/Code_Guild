@@ -32,7 +32,7 @@ def num_matches(winner, ticket):
         if ticket[i] == winner[i]:
             matches += 1
             print(matches)
-        
+    return matches
 
 def balance_tracker(matches):
     balance = 0
