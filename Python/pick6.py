@@ -54,8 +54,8 @@ def balance_tracker(matches):
         balance = (balance + 25000000) - 2
     return balance
 
-def ROI(balance, x):
-    earnings = (balance - (x * 2))
+def ROI(final_balance, x):
+    earnings = (final_balance - (x * 2))
     expenses = (x * -2)
     return_on_investment = (earnings - expenses) / (expenses)
     return return_on_investment
@@ -76,7 +76,8 @@ def main():
         print(f'The running balance is: {final_balance}\n')
         x += 1
         while x == 100:
-            print(f'Your return on investment is: $ {ROI(blance, x)}')
+            print(f'Your return on investment is: $ {ROI(final_balance, x)}')
+            break
 
     print(f'Your final balance is: ${final_balance}')
     
