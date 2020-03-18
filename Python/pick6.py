@@ -33,7 +33,6 @@ def num_matches(winner, ticket):
         if ticket[i] == winner[i]:
             matches += 1
     return matches
-    print(f'The number of matches is: {matches}')
 
 def balance_tracker(matches):
     balance = 0
@@ -65,21 +64,16 @@ def main():
     final_balance = 0
     x = 0
     winner = pick6()
-    while x <= 100:
+    while x < 100000:
        
         ticket = pick6()
         match_count = num_matches(winner, ticket)
         final_balance = final_balance + balance_tracker(num_matches(winner, ticket))
-        print(f'The winning numbers are: {winner}')
-        print(f'Your ticket numbers were: {ticket}')
-        print(f'The number of matches in this round is: {match_count}')
-        print(f'The running balance is: {final_balance}\n')
         x += 1
-        while x == 100:
-            print(f'Your return on investment is: $ {ROI(final_balance, x)}')
-            break
 
+    print(f'The winning numbers are: {winner}')
     print(f'Your final balance is: ${final_balance}')
+    print(f'Your return on investment is: $ {ROI(final_balance, x)}')
     
 
 main()
