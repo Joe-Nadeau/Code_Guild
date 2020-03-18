@@ -38,23 +38,23 @@ def balance_tracker(matches):
     balance = 0
 
     if matches == 0:
-        balance = balance - 2
+        balance = balance
     elif matches == 1:
-        balance = (balance + 4) - 2
+        balance = (balance + 4)
     elif matches == 2:
-        balance = (balance + 7)- 2
+        balance = (balance + 7)
     elif matches == 3:
-        balance = (balance + 100) - 2
+        balance = (balance + 100)
     elif matches ==4:
-        balance = (balance + 50000) - 2
+        balance = (balance + 50000)
     elif matches == 5:
-        balance = (balance + 1000000) - 2
+        balance = (balance + 1000000)
     elif matches == 6:
-        balance = (balance + 25000000) - 2
+        balance = (balance + 25000000)
     return balance
 
 def ROI(final_balance, x):
-    earnings = (final_balance - (x * 2))
+    earnings = (final_balance)
     expenses = (x * -2)
     return_on_investment = (earnings - expenses) / (expenses)
     return return_on_investment
@@ -72,8 +72,8 @@ def main():
         x += 1
 
     print(f'The winning numbers are: {winner}')
-    print(f'Your final balance is: ${final_balance}')
-    print(f'Your return on investment is: $ {ROI(final_balance, x)}')
+    print(f'Your final balance is: $ {final_balance}')
+    print(f'Your return on investment is: {ROI(final_balance, x)}')
     
 
 main()
