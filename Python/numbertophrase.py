@@ -20,7 +20,20 @@ def main():
             ones_place = user_number % 10
             out_num = [tens_dict.get(tens_place),ones_dict.get(ones_place)]
             return "- ".join(out_num)
-        elif user_number in range(100, 1000):
+        elif user_number in range(100, 109):
+            hundreds_place = (user_number // 100) * 100
+            tens_place = ((user_number - hundreds_place) // 10) * 10
+            if tens_place == None:
+                tens_place = 0
+            ones_place = user_number % 10
+            out_num = [hundreds_dict.get(hundreds_place), tens_dict.get(tens_place), ones_dict.get(ones_place)]
+            return " ".join(out_num)
+        elif user_number in range(110,120):
+            hundreds_place = (user_number // 100) * 100
+            teens_place = (user_number % 100)
+            out_num = [hundreds_dict.get(hundreds_place), teens_dict.get(teens_place)]
+            return " ".join(out_num)
+        elif user_number in range(120,1000):
             hundreds_place = (user_number // 100) * 100
             tens_place = ((user_number - hundreds_place) // 10) * 10
             if tens_place == None:
