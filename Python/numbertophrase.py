@@ -18,8 +18,8 @@ def main():
         elif user_number in range(20, 99):
             tens_place = (user_number // 10) * 10
             ones_place = user_number % 10
-            return [tens_dict(tens_place), ones_dict(ones_place)]
-            
+            out_num = [tens_dict.get(tens_place),ones_dict.get(ones_place)]
+            return "- ".join(out_num)
             
 
     user_number = int(input('Enter a 1 or 2 digit number with the number keys: '))
