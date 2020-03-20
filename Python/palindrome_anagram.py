@@ -7,11 +7,11 @@ def check_palindrome(pal_word):
     word_pal = pal_word[::-1]
 
     for index in range(len(pal_word) // 2):
-        if index in range(len(pal_word)) == index in range(len(word_pal)):
+        if pal_word[index] ==  word_pal[index]:
             continue
         else:
-            False
-    True
+            return False
+    return True
 
 def main():
     pal_word = input('\nEnter a word: \n')
