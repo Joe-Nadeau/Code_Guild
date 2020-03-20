@@ -4,22 +4,28 @@
 #Joey Nadeau
 
 def check_palindrome(pal_word):
-    word_pal = backward_string(pal_word)
+    word_pal = pal_word[::-1]
 
-    for char in range(len(pal_word)):
-        if char in pal_word == char in word_pal:
-            print ('true')
-        else:
-            print('false')
-
-def backward_string(pal_word):
-    strbuild = ""
-    for i in pal_word:
-        strbuild = i + strbuild
-        return strbuild
-
+    if len(pal_word) % 2 == 0:
+        for index in range(len(pal_word) // 2):
+            if index in range(len(pal_word)) == index in range(len(word_pal)):
+                continue
+            else:
+                False
+        True
+    elif len(pal_word) % 2 != 0:
+        for index in range(len(pal_word) // 2):
+            if index in range(len(pal_word)) == index in range(len(word_pal)):
+                continue
+            else:
+                False
+        True
 def main():
     pal_word = input('\nEnter a word: \n')
-    check_palindrome(pal_word)
+    
+    if check_palindrome(pal_word):
+        print(f'{pal_word} is a palindrome')
+    else:
+        print(f'{pal_word} is not a palindrome')
 
 main()
