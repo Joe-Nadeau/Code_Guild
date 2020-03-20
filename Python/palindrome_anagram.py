@@ -6,20 +6,13 @@
 def check_palindrome(pal_word):
     word_pal = pal_word[::-1]
 
-    if len(pal_word) % 2 == 0:
-        for index in range(len(pal_word) // 2):
-            if index in range(len(pal_word)) == index in range(len(word_pal)):
-                continue
-            else:
-                False
-        True
-    elif len(pal_word) % 2 != 0:
-        for index in range(len(pal_word) // 2):
-            if index in range(len(pal_word)) == index in range(len(word_pal)):
-                continue
-            else:
-                False
-        True
+    for index in range(len(pal_word) // 2):
+        if index in range(len(pal_word)) == index in range(len(word_pal)):
+            continue
+        else:
+            False
+    True
+
 def main():
     pal_word = input('\nEnter a word: \n')
     
