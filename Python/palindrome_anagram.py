@@ -14,12 +14,17 @@ def check_palindrome(pal_word):
     return True
 
 def check_anagram(first_word, second_word):
-    first_word.lower() # Convert each word to lower case (lower)
-    second_word.lower() 
-    first_word.replace(" ", "")  # Remove all the spaces from each word (replace)
-    second_word.replace(" ", "")      
-    # Sort the letters of each word (sorted)
-    # Check if the two are equal
+    first_word = first_word.lower() # Convert each word to lower case (lower)
+    second_word = second_word.lower() 
+    first_word = first_word.replace(" ", "")  # Remove all the spaces from each word (replace)
+    second_word = second_word.replace(" ", "")      
+    first_word = sorted(first_word)  
+    second_word = sorted(second_word)  # Sort the letters of each word (sorted)
+    
+    if first_word == second_word:
+        return True
+    else:
+        return False# Check if the two are equal
 
 def main():
 
@@ -31,10 +36,14 @@ def main():
         if check_palindrome(pal_word):
             print(f'{pal_word} is a palindrome')
         else:
-            print(f'{pal_word} is not a palindrome')
+            print(f'{pal_word} is NOT a palindrome')
 
     elif anag_or_palin == 'anagram'.lower():
         first_word = input('\nEnter the first word: \n')
         second_word = input('\nEnter the second word: \n')
 
+        if check_anagram(first_word, second_word):
+            print(f'{first_word} and {second_word} are anagrams.')
+        else:
+            print(f'{first_word} and {second_word} are NOT anagrams.')
 main()
