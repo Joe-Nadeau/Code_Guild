@@ -21,9 +21,9 @@ def main():
         for char in user_string:
 
             if char in lower_case:
-                #looks for the character from the user's string and matches it to the corresponding character in ascii_letters. Then it stores that letter's indice in the variable to_be_replaced and adds 13 to that indice
+                #looks for the character from the user's string and matches it to the corresponding character in ascii_lowercase. Then it stores that letter's indice in the variable to_be_replaced and adds the amount of rotation to that indice
                 to_be_replaced = (lower_case.find(char) + rotation) % 26
-                #looks at the indice stored in to_be_replaced, matches it to the same indice in rot_13_var and adds the character associated with that indice to cy_list.
+                #looks at the indice stored in to_be_replaced, matches it to the same indice in ascii_lowercase and adds the character associated with that indice to cy_list.
                 cy_list.append(lower_case[to_be_replaced])
             
             elif char in upper_case:

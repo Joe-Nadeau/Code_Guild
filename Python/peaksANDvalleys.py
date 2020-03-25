@@ -50,10 +50,10 @@ def peaks_and_valleys(data):
 
 
 def main():
-
+ 
     data = [1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 5, 6, 7, 8, 9, 8, 7, 6, 7, 8, 9]
     print(f'\nData set: {data}\n')
-    print(peaks(data))
+    print(peaks(data)) # i can edit your codes!
     print("_________________")
     print(valleys(data))
     print('_________________')
