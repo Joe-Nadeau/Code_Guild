@@ -34,4 +34,12 @@ def opposite(a, b):
 
 def near_100(num):
 
-    if 
+    if num >= 90 and num <= 110:
+        return True
+    else:
+        return False
+
+print(near_100(10))
+print(near_100(99))
+print(near_100(178))
+print(near_100(110))
