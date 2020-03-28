@@ -39,7 +39,34 @@ def near_100(num):
     else:
         return False
 
-print(near_100(10))
-print(near_100(99))
-print(near_100(178))
-print(near_100(110))
+# print(near_100(10))
+# print(near_100(99))
+# print(near_100(178))
+# print(near_100(110))
+
+# Problem 4
+
+def max_of_three(a, b, c):
+
+    if a > b and a > c:
+        return a
+    elif b > a and b > c:
+        return b
+    elif c > a and c > b:
+        return c
+
+# print(max_of_three(1, 3, 8))
+# print(max_of_three(8, 3, 1))
+# print(max_of_three(1, 8, 3))
+
+# Problem 5
+
+def power_of_2(a):
+
+    power = 0
+    while (power) < 21:
+        print(a**(power))
+        power += 1
+    
+        
+print(power_of_2(2))
