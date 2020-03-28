@@ -69,4 +69,4 @@ def power_of_2(a):
         power += 1
     
         
-print(power_of_2(2))
+#print(power_of_2(2))
