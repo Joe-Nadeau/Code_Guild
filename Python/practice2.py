@@ -32,4 +32,22 @@ def missing_char():
         incomplete_string.append(b)
     return incomplete_string
 
-print(missing_char())
+#print(missing_char())
+
+# Problem 3
+
+def latest_letter():
+
+    word = input("Enter a word: ")
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    word.lower()
+    last_let = ''
+
+    for i in word:
+        if i in alphabet and i > last_let:
+            last_let = (alphabet.find(i))
+    return last_let
+
+print(latest_letter())
+
+
