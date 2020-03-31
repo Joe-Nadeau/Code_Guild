@@ -72,17 +72,28 @@ def cat_dog():
 # Problem 6
 # Return the number of letter occurances in a string.
 
-letter = input('Enter a letter: ')
-word = input('Enter a word: ')
+# letter = input('Enter a letter: ')
+# word = input('Enter a word: ')
 
 def count_letter(letter, word):
 
     let_count = word.count(letter)
     return f"{letter} occurs {let_count} times in the word {word}"
 
-print(count_letter(letter, word))
+#print(count_letter(letter, word))
 
+# Problem 7
+# Convert input strings to lowercase without any surrounding whitespace.
 
+user_input = input("Enter some words n junk: ")
+
+def lowercase(user_input):
+
+    user_input = user_input.lower()
+    user_input = user_input.replace(" ", "")
+    return user_input
+
+print(lowercase(user_input))
 
 
 
