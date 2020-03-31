@@ -39,15 +39,22 @@ def missing_char():
 def latest_letter():
 
     word = input("Enter a word: ")
-    alphabet = 'abcdefghijklmnopqrstuvwxyz'
-    word.lower()
-    last_let = ''
+    x = sorted(word)
+    y = x.pop()
+    return f'The latest leter is: {y}'
 
-    for i in word:
-        if i in alphabet and i > last_let:
-            last_let = (alphabet.find(i))
-    return last_let
+# print(latest_letter())
 
-print(latest_letter())
+# Problem 4
+
+def count_hi():
+
+    a_string = 'hi my name is bob. hi bob, my name is tom, hi tom, my name is carl, hi carl, my name is hihihi.'
+    hi_count = a_string.count('hi')
+    return hi_count
+
+#print(f'The hi count is: {count_hi()}')
+
+
 
 
