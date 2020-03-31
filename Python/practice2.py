@@ -55,6 +55,34 @@ def count_hi():
 
 #print(f'The hi count is: {count_hi()}')
 
+# Problem 5
+# Write a function that returns True if a given string contains the same number of 'cat' as it does 'dog'
+
+def cat_dog():
+
+    catsndogs = input("Enter 'cat' and 'dog' as many times as you want")
+
+    if catsndogs.count('cat') == catsndogs.count('dog'):
+        return True
+    else:
+        return False
+
+#print(cat_dog())
+
+# Problem 6
+# Return the number of letter occurances in a string.
+
+letter = input('Enter a letter: ')
+word = input('Enter a word: ')
+
+def count_letter(letter, word):
+
+    let_count = word.count(letter)
+    return f"{letter} occurs {let_count} times in the word {word}"
+
+print(count_letter(letter, word))
+
+
 
 
 
