@@ -68,8 +68,8 @@ nums = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 def print_every_other(nums):
     i = 0
     while i in range(0, len(nums), 2):
-        print([i])
-        i += 1
+        print(nums[i])
+        i += 2
 
 #     for i in range(0, len(nums)):
 #         if i % 2 == 0:
