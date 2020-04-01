@@ -66,15 +66,15 @@ def user_gen_numlist(num_list):
 nums = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
 def print_every_other(nums):
+    i = 0
+    while i in range(0, len(nums), 2):
+        print([i])
+        i += 1
 
 #     for i in range(0, len(nums)):
 #         if i % 2 == 0:
 #             print(i)
-    x = 0
-    while x < len(nums):
-        x += 1
-        if [i] in nums % 2 == 0:
-            print(i)
-
+    
+       
 print_every_other(nums)
 
