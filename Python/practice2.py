@@ -93,7 +93,7 @@ def lowercase(user_input):
     user_input = user_input.replace(" ", "")
     return user_input
 
-print(lowercase(user_input))
+#print(lowercase(user_input))
 
 
 
