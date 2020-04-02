@@ -6,14 +6,14 @@
 # ---------CLASSES-----------
 
 class ATM:
-    def __init__(self, account_holder, balance, interest_rate):
+    def __init__(self, account_holder = 'John Doe', balance = 0, interest_rate = 0.1):
         self.account_holder = account_holder
         self.balance = balance
         self.interest_rate = interest_rate
     
     # returns the account balance
     def check_balance(self):
-        return f'Your current balance is: {self.balance}'
+        return f'Your current balance is: ${self.balance}\n'
 
     # Get amount from user, add it to balance
     def deposit(amount):
@@ -44,22 +44,24 @@ class ATM:
 #     new_guy = input('Please enter the first and last name of the new account holder: \n')
 #     locals()[new_guy] = ATM('', 12, ('the land of oo', 'somewhere else', 'who knows'))
 
-def choose_transaction():
+def choose_transaction(bobby):
 
-    trans_type = input('Which type of transaction would you like to perform?\nCheck_Balance\nDeposit\nWithdraw\nCalculate_Interest\nExit-ATM')
+    while True:
+        trans_type = input('Which type of transaction would you like to perform?\nCheck_Balance\nDeposit\nWithdraw\nCalculate_Interest\nExit-ATM')
 
-    if trans_type == 'Check_Balance':
-        print(account_holder.check_balance(self))
-    elif trans_type == 'Deposit':
-        amount = float(input('Please enter the amount you would like to deposit:\n'))
-        print(account_holder.deposit(amount))
-    elif trans_type == 'Withdraw':
-        amount = float(input('Please enter the amount you would like to withdraw:\n'))
-        print(account_holder.withdraw(amount))
-    elif trans_type == 'Calculate_Interest':
-        print(account_holder.calc_interest(amount))
-    elif trans_type == 'Exit-ATM':
-        break
+        if trans_type == 'Check_Balance':
+            print(bobby.check_balance())
+        elif trans_type == 'Deposit':
+            amount = float(input('Please enter the amount you would like to deposit:\n'))
+            print(bobby.deposit(amount))
+        elif trans_type == 'Withdraw':
+            amount = float(input('Please enter the amount you would like to withdraw:\n'))
+            print(bobby.withdraw(amount))
+        elif trans_type == 'Calculate_Interest':
+            print(bobby.calc_interest(amount))
+        elif trans_type == 'Exit-ATM':
+            print('Goodbye')
+            break
 
 
 
@@ -68,12 +70,9 @@ def choose_transaction():
 def main():
 
     # instantiates class 'ATM'
-    my_account = ATM('Bobby', 0, 0.1)
-
-    # define variables
-    amount = 0
+    bobby = ATM('Bobby', 2000, 0.1)
 
     # call functions
-    choose_transaction()
+    choose_transaction(bobby)
 
 main()
