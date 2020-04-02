@@ -4,7 +4,8 @@
 # Joey Nadeau
 
 class ATM:
-    def __init__(self, balance, interest_rate)
+    def __init__(self, account_holder, balance, interest_rate)
+        self.account_holder = account_holder
         self.balance = balance
         self.interest_rate = interest_rate
     
@@ -26,14 +27,28 @@ class ATM:
 
     # withdraws the amount from the account and returns it
     def withdraw(amount):
-        if check_withdrawal == True:
+        if check_withdrawal(amount) == True:
             balance = balance - amount
             return f'Here is the amount you have withdrawn ${amount}.\n Your remaining balance is ${balance}.'
 
     #returns the amount of interest calculated on the account
-    def calc_interest(self):
+    def calc_interest(amount):
         return f'Your interest rate is: {self.interest_rate}'
 
+# def create_new_account():
+#     new_guy = input('Please enter the first and last name of the new account holder: \n')
+#     locals()[new_guy] = ATM('', 12, ('the land of oo', 'somewhere else', 'who knows'))
 def choose_transaction():
 
-    trans_type = input('Which type of transaction would you like to perform?\nCheck_Balance\nDeposit\nWithdraw\nCalculate_Interest')
+    trans_type = input('Which type of transaction would you like to perform?\nCheck_Balance\nDeposit\nWithdraw\nCalculate_Interest\nExit-ATM')
+
+    if trans_type == 'Check_Balance':
+        print(account_holder.check_balance(self))
+    elif trans_type == 'Deposit':
+        print(account_holder.deposit(amount))
+    elif trans_type == 'Withdraw':
+        print(account_holder.withdraw(amount))
+    elif trans_type == 'Calculate_Interest':
+        print(account_holder.calc_interest(amount))
+    elif trans_type == 'Exit-ATM'
+        break
