@@ -3,8 +3,10 @@
 # ATM
 # Joey Nadeau
 
+# ---------CLASSES-----------
+
 class ATM:
-    def __init__(self, account_holder, balance, interest_rate)
+    def __init__(self, account_holder, balance, interest_rate):
         self.account_holder = account_holder
         self.balance = balance
         self.interest_rate = interest_rate
@@ -35,9 +37,13 @@ class ATM:
     def calc_interest(amount):
         return f'Your interest rate is: {self.interest_rate}'
 
+
+#  ------- FUNCTIONS ---------
+
 # def create_new_account():
 #     new_guy = input('Please enter the first and last name of the new account holder: \n')
 #     locals()[new_guy] = ATM('', 12, ('the land of oo', 'somewhere else', 'who knows'))
+
 def choose_transaction():
 
     trans_type = input('Which type of transaction would you like to perform?\nCheck_Balance\nDeposit\nWithdraw\nCalculate_Interest\nExit-ATM')
@@ -45,10 +51,29 @@ def choose_transaction():
     if trans_type == 'Check_Balance':
         print(account_holder.check_balance(self))
     elif trans_type == 'Deposit':
+        amount = float(input('Please enter the amount you would like to deposit:\n'))
         print(account_holder.deposit(amount))
     elif trans_type == 'Withdraw':
+        amount = float(input('Please enter the amount you would like to withdraw:\n'))
         print(account_holder.withdraw(amount))
     elif trans_type == 'Calculate_Interest':
         print(account_holder.calc_interest(amount))
-    elif trans_type == 'Exit-ATM'
+    elif trans_type == 'Exit-ATM':
         break
+
+
+
+# --------- Main ----------
+
+def main():
+
+    # instantiates class 'ATM'
+    my_account = ATM('Bobby', 0, 0.1)
+
+    # define variables
+    amount = 0
+
+    # call functions
+    choose_transaction()
+
+main()
