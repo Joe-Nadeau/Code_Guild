@@ -36,7 +36,7 @@ class ATM:
 
     # stores the transactions made by the user
     def print_transactions(self):
-        print()
+        return self.transactions
     #returns the amount of interest calculated on the account
     # def calc_interest(self, amount):
     #     return f'Your interest rate is: {self.interest_rate}'
@@ -51,19 +51,19 @@ class ATM:
 def choose_transaction(bobby):
 
     while True:
-        trans_type = input('Which type of transaction would you like to perform?\nCheck_Balance\nDeposit\nWithdraw\nCalculate_Interest\nExit-ATM')
+        trans_type = input('Which type of transaction would you like to perform?\nCheck_Balance\nDeposit\nWithdraw\nCalculate_Interest\nPrint Transactions\nExit-ATM')
 
         if trans_type == 'Check_Balance':
-            (bobby.transactions()).append('Check balance')
             print(bobby.check_balance())
+            (bobby.transactions()).append('Check balance')
         elif trans_type == 'Deposit':
             amount = float(input('Please enter the amount you would like to deposit:\n'))
-            (bobby.transactions()).append(f'Deposit of ${amount}')
             print(bobby.deposit(amount))
+            (bobby.transactions()).append(f'Deposit of ${amount}')
         elif trans_type == 'Withdraw':
             amount = float(input('Please enter the amount you would like to withdraw:\n'))
-            (bobby.transactions()).append(f'Withdraw of ${amount}')
             print(bobby.withdraw(amount))
+            (bobby.transactions()).append(f'Withdraw of ${amount}')
         elif trans_type == 'Calculate Interest':
             print(bobby.calc_interest(amount))
         elif trans_type == 'Print Transactions':
@@ -79,7 +79,7 @@ def choose_transaction(bobby):
 def main():
 
     # instantiates class 'ATM'
-    bobby = ATM('Bobby', 2000, 0.1)
+    bobby = ATM('Bobby', 2000, 0.1, [])
 
     # call functions
     choose_transaction(bobby)
