@@ -1,4 +1,36 @@
 .container {
-    max-width: 400px;
+    background-color: wheat;
+    color: black;
+    max-width: 500px;
     margin: auto;
+    padding: 75px;;
 }
+p {
+    margin-bottom: 20px;
+    color: darkgreen;
+}
+a {
+    color: seagreen;
+}
+img {
+    float: inline-end;
+    margin-top: 5px;
+
+}
+button {
+    transition-duration: 0.2s;
+    color:  #4CAF50;
+    background-color: whitesmoke;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2em;
+    block-size: 3em;
+    position:relative;
+    transition: .9s ease;
+    top: 100%;
+    left: 14%;
+    border-radius: 12px;
+}
+  button:hover {
+    background-color: #4CAF50;
+    color: whitesmoke;
+  }
