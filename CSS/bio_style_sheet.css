@@ -7,7 +7,7 @@
 }
 p {
     margin-bottom: 20px;
-    color: darkgreen;
+    color: slategray;
 }
 a {
     color: seagreen;
@@ -15,8 +15,17 @@ a {
 img {
     float: inline-end;
     margin-top: 5px;
-
+    border-radius: 8px;
+    }
+ul {
+    color: slategray;
+    list-style-type: georgian;
 }
+blockquote {
+    font-family: monospace;
+    color: midnightblue;
+    }
+
 button {
     transition-duration: 0.2s;
     color:  #4CAF50;
