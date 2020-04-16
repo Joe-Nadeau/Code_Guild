@@ -1,0 +1,14 @@
+.wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+#sidebar {
+    width: 175px;
+    height: 100vh;
+    background: rgb(29, 28, 28);
+    color: rgb(255, 255, 255);
+    /* transition: all 0.3s; */
+    /* margin-bottom: 40px; */
+}
