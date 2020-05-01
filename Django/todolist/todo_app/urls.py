@@ -3,5 +3,8 @@ from django.urls import path
 from .import views
 
 urlpatterns = [
-    path('',views.todo_list, name = 'todo_list')
+    path('',views.todo_list, name = 'todo_list'),
+    #path('completed/<int:id>', views.completed, name = 'checked_off'),
+    path('todo_app/detail/<int:id>', views.detail, name = 'detailed_view'),
+    path('todo_app/remove/<int:id>', views.remove, name = 'get_OUT'),
 ]

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{{todo_item}}</h2>
+        <p>added: {{ todo_item.created_date }}</p>
+        <p>task: {{ todo_item.description }}</p>
+        <p>complete ?: {{todo_item.is_complete}}</p>
+    update
+    remove
+
+    <form method = "post" action = "http://localhost:8000/todo_app/remove/{{ todo_item.id }}"> 
+        {% csrf_token %}
+        <button type = "submit">Remove</button>
+    </form>
+
+    complete
+
+
+
+
+{% endblock %}
