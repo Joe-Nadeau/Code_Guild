@@ -7,10 +7,13 @@ from django.utils import timezone
 class TodoItem(models.Model):
     task_description = models.TextField(blank = False, null = True)
     created_date = models.DateTimeField(default = timezone.now)
-    completion_date = models.DateTimeField()
+    completion_date = models.DateTimeField(blank = True, null = True)
     is_completed = models.BooleanField(default = False)
 
     def complete_task(self):
         self.is_completed = True
         self.completion_date = timezone.now()
         return self.is_completed
+
+    def update(self):
+        self.task_description

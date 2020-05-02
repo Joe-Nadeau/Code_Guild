@@ -1,22 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDoList</title>
-</head>
-<body>
-    <div>
-        <h1><a href="/">ToDo List</a></h1>
-    </div>
 
+    {% extends 'base.html' %}
+    
+    {% block content %}
     {% for todo_item in todo_items %}
     <div>
-        <h2>{{todo_item}}</h2>
+        <h2>{{ todo_item.task_description }}</h2>
         <p>added: {{ todo_item.created_date }}</p>
-        <a href="http://localhost:8000/todo_app/detail/{{ todo_item.id }}">View</a>
+        <a href="http://localhost:8000/todo_app/detail/{{ todo_item.id }}">View Task Details</a>
     </div>
     {% endfor %}
-    
-</body>
-</html>
+    {% endblock %}

@@ -21,3 +21,18 @@ def remove(request, id):
     todo_item = TodoItem.objects.get(id = id)
     todo_item.delete()
     return redirect('todo_list')
+
+def update(request, id):
+    if request.method == 'POST':
+        task_description = request.POST.get('task_description')
+        upload = TodoItem(
+            task_description = task_description
+        )
+        upload.save()
+        return redirect('todo_list')
+    else:
+        todo_item = TodoItem.objects.get(id = id)
+        context = {
+            'todo_item': todo_item,
+        }
+        return render(request, 'edit.html', context)
