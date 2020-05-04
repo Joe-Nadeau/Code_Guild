@@ -1,0 +1,7 @@
+Create a directory.
+in terminal: pipenv shell
+in terminal: piplist (to see if the evironment was installed)
+in terminal: pipenv install Django
+in terminal: django-admin startproject project_name_here . (don't forget the dot!)
+in terminal: python manage.py runserver (to see if it worked, you should see a rocketship in the browser)
+in terminal: python manage.py start app application_name_here

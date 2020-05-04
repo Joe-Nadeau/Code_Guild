@@ -5,66 +5,126 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
     <title>Burrito Gordo</title>
     <link rel="stylesheet" href="../CSS/burrito_stylesheet.css">
   </head>
+
+
   <body>
     <h1>Burrito Gordo</h1>
     <img src = "https://tasteslikehicken.files.wordpress.com/2014/10/2-a-cross-section-ofsome-beautiful-burrito-photo-via-designrevolution.jpg"/>
 
 
-    <h2> Customize your Burrito </h2>
 
-    <form action="">
-        <h3>Tortilla</h3>
-            <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-                <label class="custom-control-label" for="customRadioInline1">Corn</label>
-            </div>
+    <div class="row">
+      <div class="col-75">
+        <div class="container">
+          <form action="/action_page.php" id="OrderForm">
+            <fieldset id='OFset'>
+              <h2> Customize your Burrito </h2>
 
-            <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-                <label class="custom-control-label" for="customRadioInline2">Flower</label>
-            </div>
-    </form>
+              <div id='tortilla'>
+                <h3>Tortilla</h3>
+                  <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="customRadioInline2" name="customRadioInline2" class="custom-control-input">
+                      <label class="custom-control-label" for="customRadioInline2">Corn</label>
+                  </div>
 
-    <form>
+                  <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="customRadioInline2" name="customRadioInline2" class="custom-control-input">
+                      <label class="custom-control-label" for="customRadioInline2">Flower</label>
+                  </div>
+              </div>
+
+              <div id="rice">
+                <h3>Rice</h3>
+                  <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="customRadioInline4" name="customRadioInline4" class="custom-control-input">
+                      <label class="custom-control-label" for="customRadioInline4">White</label>
+                  </div>
+
+                  <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="customRadioInline4" name="customRadioInline4" class="custom-control-input">
+                      <label class="custom-control-label" for="customRadioInline4">Brown</label>
+                  </div>
+              </div>
+
+              <div id="beans">
+                <h3>Beans</h3>
+                  <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="customRadioInline5" name="customRadioInline5" class="custom-control-input">
+                      <label class="custom-control-label" for="customRadioInline5">Black</label>
+                  </div>
+
+                  <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="customRadioInline5" name="customRadioInline5" class="custom-control-input">
+                      <label class="custom-control-label" for="customRadioInline5">Pinto</label>
+                  </div>
+              </div>
+
+              <div id="protein">
+                  <h3>Protein</h3>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline2" name="customRadioInline2" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadioInline2">Chicken</label>
+                  </div>
+
+                  <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="customRadioInline2" name="customRadioInline2" class="custom-control-input">
+                      <label class="custom-control-label" for="customRadioInline2">Beef</label>   
+                  </div>
+
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline2" name="customRadioInline2" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadioInline2">Tofu</label>
+                  </div>
+              </div>
+
+              <div id="vegANDsides">
+                <h3>Veggies and Sides</h3>
+                <input type="checkbox" id="veg1" name="veg1" value="Bike">
+                <label for="veg1"> tomatoe</label><br>
+                <input type="checkbox" id="veg2" name="veg2" value="Car">
+                <label for="veg2"> onion</label><br>
+                <input type="checkbox" id="veg3" name="veg3" value="Boat">
+                <label for="veg3"> jalapeno</label><br>
+                <input type="checkbox" id="veg4" name="veg4" value="Boat">
+                <label for="veg4"> avacado</label><br>
+                <input type="checkbox" id="side1" name="side1" value="Boat">
+                <label for="side1"> salsa</label><br>
+                <input type="checkbox" id="side2" name="side2" value="Boat">
+                <label for="side2"> sour cream</label><br><br>
+                <input type="submit" value="Submit">
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <form class="form-inline" id='UserInfo'>
+      <fieldset id=UIset>
+        <legend>User Info:</legend>
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username"><br>
-
+        <input type="text" id="username" name="username"><br><br>
         <label for="password">Password:</label>
-        <input type="text" id="password" name="password"><br>
-
+        <input type="text" id="password" name="password"><br><br>
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br>
-
+        <input type="text" id="name" name="name"><br><br>
         <label for="email">Email:</label>
-        <input type="text" id="email" name="email"><br>
-
+        <input type="text" id="email" name="email"><br><br>
         <label for="phone_number">Phone Number:</label>
-        <input type="text" id="phone_number" name="phone_number"><br>
-
+        <input type="text" id="phone_number" name="phone_number"><br><br>
         <label for="DOB">Date of Birth:</label>
-        <input type="text" id="DOB" name="DOB"><br>
-
+        <input type="text" id="DOB" name="DOB"><br><br>
         <label for="SOC">Social Security Number:</label>
-        <input type="text" id="SOC" name="SOC"><br>
-
+        <input type="text" id="SOC" name="SOC"><br><br>
         <label for="street">Street:</label>
-        <input type="text" id="street" name="street"><br>
-
+        <input type="text" id="street" name="street"><br><br>
         <label for="CityStateZip">City, State, Zip:</label>
-        <input type="text" id="CityStateZip" name="CityStateZip"><br>
+        <input type="text" id="CityStateZip" name="CityStateZip"><br><br>
+      </fieldset>
     </form>
 
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>

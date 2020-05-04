@@ -7,7 +7,33 @@ h1 {
     
 }
 
+h2 {
+    font-family: fantasy;
+    color: firebrick;
+}
+
 img {
+    float: right;
+}
 
+#OrderForm {
+    display: inline-flexbox;
+    position: relative;
+    display: flexbox;
+    flex-wrap: wrap;
+}
 
+#OFset {
+    
+}
+
+#UserInfo {
+    display: inline-flexbox;
+    border-radius: 8px;
+    position: relative;
+}
+
+#UIset {
+    border-radius: 8px;
+    background-color: gainsboro;
 }
