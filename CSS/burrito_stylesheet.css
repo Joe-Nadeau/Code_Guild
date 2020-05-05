@@ -12,10 +12,6 @@ h2 {
     color: firebrick;
 }
 
-img {
-    float: right;
-}
-
 #OrderForm {
     display: inline-flexbox;
     position: relative;
