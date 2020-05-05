@@ -3,7 +3,6 @@
 {% block content %}
     <h2>{{todo_item.task_description}}</h2>
         <p>added: {{ todo_item.created_date }}</p>
-        <p>complete ?: {{todo_item.is_completed}}</p>
     
     <form method = "GET" action = "http://localhost:8000/todo_app/update/{{ todo_item.id }}">
         {% csrf_token %}

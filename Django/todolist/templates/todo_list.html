@@ -2,11 +2,24 @@
     {% extends 'base.html' %}
     
     {% block content %}
+
     {% for todo_item in todo_items %}
+
     <div>
         <h2>{{ todo_item.task_description }}</h2>
         <p>added: {{ todo_item.created_date }}</p>
+        <p>completed date: {{ todo_item.completion_date }}</p>
         <a href="http://localhost:8000/todo_app/detail/{{ todo_item.id }}">View Task Details</a>
     </div>
+
     {% endfor %}
+
+    <div>
+        <form action = "http://localhost:8000/todo_app/new_task" method = "POST">
+            {% csrf_token %}
+            <input type="text" name="new_task" id="new_task">
+            <button type = "submit">New Task</button>
+        </form>   
+    </div>
+
     {% endblock %}
