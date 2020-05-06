@@ -5,7 +5,7 @@
 <h1>Edit Page</h1>
 <form method = "post" action="http://localhost:8000/todo_app/update/{{ todo_item.id }}">
     {% csrf_token %}
-    <input type="text" name="task_description" default={{todo_itme.task_description}}>
+    <input type="text" name="task_description" placeholder={{todo_item.task_description}} default={{todo_itme.task_description}}>
     <button type="submit">Submit</button>
     <label><input type="checkbox" name="check_box">Mark Task Complete</label>
 </form>

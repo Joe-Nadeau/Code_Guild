@@ -9,6 +9,7 @@ class TodoItem(models.Model):
     created_date = models.DateTimeField(default = timezone.now)
     completion_date = models.DateTimeField(blank = True, null = True)
     is_completed = models.BooleanField(default = False)
+    
 
     def complete_task(self):
         self.is_completed = True
