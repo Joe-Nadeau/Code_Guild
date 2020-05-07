@@ -11,10 +11,13 @@
 <body>
     <h1>URL SHORTENER</h1>
 
-    <form id="user_url" action="POST">
+    <form id="user_url" method = "POST" action="http://localhost:8000/">
+        {% csrf_token %}
         <label for="user_url">Enter URL to be shortened:</label><br>
         <input type="text" id="user_url" name="user_url" size=80><br>
+        <input type="submit" value="Shorten it!">
     </form>
-
+    
+    <h3>{{ URLS }}</h3>
 </body>
 </html>

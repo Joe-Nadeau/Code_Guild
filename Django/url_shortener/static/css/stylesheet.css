@@ -18,3 +18,7 @@ body {
     background-image: url("https://spacenews.com/wp-content/uploads/2018/05/24359364107_152b0152ff_k.jpg");
     background-size: 1300px;
 }
+
+h3 {
+    color: lightskyblue;
+}
