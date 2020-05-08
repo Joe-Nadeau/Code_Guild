@@ -12,12 +12,26 @@
     <h1>URL SHORTENER</h1>
 
     <form id="user_url" method = "POST" action="http://localhost:8000/">
-        {% csrf_token %}
+        {% csrf_token%}
         <label for="user_url">Enter URL to be shortened:</label><br>
         <input type="text" id="user_url" name="user_url" size=80><br>
         <input type="submit" value="Shorten it!">
     </form>
     
-    <h3>{{ URLS }}</h3>
+    {% for url in URLS %}   
+
+
+
+            <li><a href="{{ url.url }}">{{ url.url_hash }}</a>
+                <form id="delete_url" method="POST" action="http://localhost:8000/delete/{{url.id}}/">
+                    {%csrf_token%}
+                    <button type ="submit">Delete URL</button>
+                </form>
+            </li>
+
+        {% empty %}
+            <p>There are no URLS</p>
+    {% endfor %}
+
 </body>
 </html>

@@ -1,7 +1,46 @@
-Create a directory.
-in terminal: pipenv shell
-in terminal: piplist (to see if the evironment was installed)
-in terminal: pipenv install Django
-in terminal: django-admin startproject project_name_here . (don't forget the dot!)
-in terminal: python manage.py runserver (to see if it worked, you should see a rocketship in the browser)
-in terminal: python manage.py start app application_name_here
+Create a directory
+cd into the new directory
+pipenv shell
+piplist (to see if the evironment was installed)
+pipenv install Django(if it isn't already in the list of installed items)
+django-admin startproject project_name_here . (don't forget the dot!)
+python manage.py runserver (to see if it worked, you should see a rocketship in the browser)
+python manage.py start app application_name_here
+settings.py -> Installed Apps -> add new app
+go back to application file
+create a Urls.py file
+add this text to urls.py file:
+
+    from django.urls import path
+    from.import views
+
+    urlpatterns = [
+        path('', views.viewname, name = viewname)
+    ]
+
+go into views.py file and add this text:
+
+    from django.shortcuts import render
+
+    def viewname(request):
+        return render(request, "index.html)
+
+go into urls.py file(project level) and enter this text:
+
+    from django.contrib import admin
+    from django.urls import path, include
+
+    add path for app to url patterns
+
+create templates folder at same level as app and project folders
+go to settings.py file
+    under the templates section add the following to DIRS: [] <-Inside the square brackets:
+        os.path.join(BASE_DIR, 'templates')
+        
+create a static folder at  the same level as the templates app and projet folders
+    inside static folder create:
+        a css file
+        a main.js file
+
+go back to your settings.py file and at the end add this:
+    STATICFILES_DIRS = [os.path.join('static')]

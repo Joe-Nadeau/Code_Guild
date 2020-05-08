@@ -12,7 +12,10 @@ h1 {
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 20px;
+    margin: 5px;
 }
+
+
 
 body {
     background-image: url("https://spacenews.com/wp-content/uploads/2018/05/24359364107_152b0152ff_k.jpg");
@@ -21,4 +24,31 @@ body {
 
 h3 {
     color: lightskyblue;
+    text-align: center;
+}
+
+li {
+    color: crimson;
+    text-align: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+a {
+    color: crimson;
+    text-align: center;
+}
+
+p {
+    color: skyblue;
+    text-align: center;
+}
+
+#delete_url {
+    display: inline-block;
+}
+
+#delete_url button {
+    background-color: skyblue;
+    border-radius: 8px;
 }
