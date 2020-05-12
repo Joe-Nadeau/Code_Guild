@@ -2,7 +2,7 @@
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRVPdhmItD9stTOba9x0UmiL-yCoZQ1227Qdrk5kZ_e0xMEKLMJ&usqp=CAU");
     color: ghostwhite;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-bottom: 2px;
+    margin-bottom: 0px;
 
 }
 
@@ -20,4 +20,8 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  #maintainer > .list-unstyled > .media #book_image {
+    size: 30px;
   }
