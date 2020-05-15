@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="" method="POST">
+    <div>
+        <div>
+          <label for="inputFname">First Name:</label>
+          <input type="text" class="form-control" id="inputFname" name="First_name">
+        </div>
+        <div>
+            <label for="inputLname">Last Name:</label>
+            <input type="text" class="form-control" id="inputLname" name="Last_name">
+        </div>
+        <div>
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="Email_address">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+          <div>
+              <label for="username">Username:</label>
+              <input type="username" class="form-control" id="username" name="User_name">
+          </div>
+          <div>
+            <label for="username">Password</label>
+            <input type="password" class="form-control" id="password" name="Password">
+          </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Register Account</button>
+</form>
+
+{% endblock %}

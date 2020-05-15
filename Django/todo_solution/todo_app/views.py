@@ -74,3 +74,4 @@ def mark_done(request, id):
     todo.save()
 
     return redirect('details', todo.id)
+
