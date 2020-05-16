@@ -6,8 +6,16 @@ from .models import Todo
 
 # view to get all of the todos from the database and send them to the 'todos/list.html' view
 def todo_list(request):
-    todos = Todo.objects.all()  # get all of the todos from the database and store them in todos
+    user_id = request.user.id
+    todos = Todo.objects.filter(id= user_id)  # get all of the todos from the database and store them in todos
+    
+    # print(request.user.id) # < The request IS the USER sending the request
+    # print(request.user.email)
+    # print(request.user.first_name)
+    # print(request.user.last_name)
 
+# one_entry = Entry.objects.get(pk=1)
+#  q1 = Entry.objects.filter(headline__startswith="What")
     # create the context dictionary to send the todos to the template
     context = {
         'todos': todos

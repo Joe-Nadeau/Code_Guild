@@ -2,28 +2,29 @@
 
 {% block content %}
 
-<form action="" method="POST">
+<form action="http://localhost:8000/accounts/register/" method="POST">
+  {% csrf_token %}
     <div>
         <div>
           <label for="inputFname">First Name:</label>
-          <input type="text" class="form-control" id="inputFname" name="First_name">
+          <input type="text" class="form-control" id="inputFname" name="first_name">
         </div>
         <div>
             <label for="inputLname">Last Name:</label>
-            <input type="text" class="form-control" id="inputLname" name="Last_name">
+            <input type="text" class="form-control" id="inputLname" name="last_name">
         </div>
         <div>
             <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="Email_address">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
           <div>
               <label for="username">Username:</label>
-              <input type="username" class="form-control" id="username" name="User_name">
+              <input type="username" class="form-control" id="username" name="username">
           </div>
           <div>
             <label for="username">Password</label>
-            <input type="password" class="form-control" id="password" name="Password">
+            <input type="password" class="form-control" id="password" name="password">
           </div>
     </div>
     <button type="submit" class="btn btn-primary">Register Account</button>

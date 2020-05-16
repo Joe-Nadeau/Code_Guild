@@ -1,11 +1,18 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import get_user_model, login, logout, authenticate
 
 # Create your views here.
 
 def login_user(request):
-        return render(request, 'accounts/login.html' )
+    username = request.POST.get('InputUsername')
+    password = request.POST.get('InputPassword1')
+    user = authenticate(request, username=username, password=password)
+    if user is not None:
+        login(request, user)
+        return render(request, 'todos/list.html' )
+    else:
+        return render(request, 'accounts/login.html')
 
 # def my_view(request):
 #     username = request.POST['username']
@@ -21,26 +28,30 @@ def login_user(request):
 
 def logout_user(request):
     logout(request)
-    return render(request, '')
+    return redirect('home')
 
 # def logout_view(request):
 #     logout(request)
 #     # Redirect to a success page.
-
+User = get_user_model()
 # creates new user
 def register_new_user(request):
     if request.method == 'POST':
-        new_user = get_user_model(
-        first_name = request.POST['First_name'],
-        last_name = request.POST['Last_name'],
-        user_name = request.POST['User_name'],
-        email = request.POST['Email_address'],
-
+        new_user = User(
+        first_name = request.POST['first_name'],
+        last_name = request.POST['last_name'],
+        username = request.POST['username'],
+        email = request.POST['email'],
         )
-        password = request.POST['Password']
 
-    return render(request, 'accounts/register.html')
+        password = request.POST['password']
+        new_user.set_password(password)
+        new_user.save()
 
+        return redirect('list')
+    
+    else:
+        return render(request, 'accounts/register.html')
 
 # # view add a todo to the database. this view handles both GET and POST HTTP requests
 # def add_todo(request):
