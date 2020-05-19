@@ -4,10 +4,10 @@ from django.http import HttpResponse
 # import the Todo model from the models file
 from .models import Todo
 
-# view to get all of the todos from the database and send them to the 'todos/list.html' view
+# view to get all of the todos from the database for the logged in user and send them to the 'todos/list.html' view
 def todo_list(request):
-    user_id = request.user.id
-    todos = Todo.objects.filter(id= user_id)  # get all of the todos from the database and store them in todos
+    todos = Todo.objects.filter(user=request.user.id)  # get all of the todos from the database and store them in todos
+    # Item.objects.filter(user=self.request.user)
     
     # print(request.user.id) # < The request IS the USER sending the request
     # print(request.user.email)
