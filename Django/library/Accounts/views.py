@@ -16,7 +16,7 @@ def login_user(request):
 
 def logout_user(request):
     logout(request)
-    return redirect('home')
+    return redirect('homepage')
 
 User = get_user_model()
 # creates new user
@@ -33,4 +33,6 @@ def register_new_user(request):
         new_user.set_password(password)
         new_user.save()
 
-        return redirect('list')
+        return redirect('homepage')
+    else:
+        return render(request, 'accounts/register.html')

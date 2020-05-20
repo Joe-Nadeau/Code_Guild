@@ -13,6 +13,7 @@ class author(models.Model):
     def __str__(self):
         return "%s %s" % (self.first_name, self.last_name)
 
+
 class Book(models.Model):
     title = models.CharField(max_length=200, default='Title Goes Here')
     publish_date = models.DateField(blank = True, null = True)

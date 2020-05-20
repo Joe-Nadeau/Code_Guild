@@ -9,6 +9,7 @@
 body, html {
     height: 100%;
   }
+
   .bg {
     /* The image used */
     background-image: url("https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&w=1000&q=80");
@@ -23,12 +24,17 @@ body, html {
     background-attachment: fixed;
   }
 
-.bg h2 {
-  color: white;
+.bg h1 {
+  color: rgb(221, 117, 117);
 }
 
 #books {
   align-items: center;
+}
+
+.bg table th {
+  color: rgb(223, 14, 49);
+  font-size: 35px;
 }
 
 .bg table {
@@ -36,6 +42,14 @@ body, html {
   background-color: rgb(4, 32, 32);
   opacity: 0.85;
   border-radius: 8px;
-  border-width: 40px;
-  margin: 40px;
+}
+
+.bg {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: rgb(221, 117, 117) ;
+  font-size: 20px;
 }
