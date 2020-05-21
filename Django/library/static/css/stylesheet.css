@@ -29,7 +29,13 @@ body, html {
   }
 
 .bg h1 {
-  color: rgb(221, 117, 117);
+  color: rgb(233, 18, 18);
+}
+
+.bg img {
+  width: 250px;
+  height: 400px;
+  margin: 30px;
 }
 
 #books {
