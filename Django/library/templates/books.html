@@ -34,48 +34,15 @@
         <th>Publication Date</th>
         <th>Status</th>
       </tr>
+      {% for Book in books %}
       <tr>
         <td></td>
-        <td>Inferno</td>
-        <td>Dante Alighieri</td>
-        <td>1472</td>
-        <td></td>
+        <td>{{ Book.title }}</td>
+        <td>{{ Book.author }}</td>
+        <td>{{ Book.publish_date }}</td>
+        <td>status</td>
       </tr>
-      <tr>
-        <td></td>
-        <td>Purgatorio</td>
-        <td>Dante Alighieri</td>
-        <td>1472</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>Paradisio</td>
-        <td>Dante Alighieri</td>
-        <td>1472</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>Hardcore Zen</td>
-        <td>Brad Warner</td>
-        <td>2003</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>Manufacturing Consent</td>
-        <td>Noam Chomsky</td>
-        <td>1988</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>The Lost Art of Reading Nature's Signs</td>
-        <td>Tristan Gooley</td>
-        <td>2014</td>
-        <td></td>
-      </tr>
+      {% endfor %}
     </table>
 
 </div>
