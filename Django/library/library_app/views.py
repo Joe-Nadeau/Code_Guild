@@ -10,3 +10,9 @@ def display_homepage(request):
 def check_out_books(request):
     books = Book.objects.all()
     return render(request, "books.html")
+
+    context = {
+        'books': books,
+    }
+
+    return render(request, 'books.html', context) # context is sent to 'todos/list.html'
