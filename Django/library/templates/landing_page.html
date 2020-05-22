@@ -18,14 +18,22 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="http://localhost:8000/books">Books <span class="sr-only">(current)</span></a>
     </div>
+  </div>
+  {% if user.is_authenticated %}
+    <div id=profile class="navbar-nav">
+      <a href="http://localhost:8000/accounts/profile/">My Books <span class="sr-only">(current)</span></a>
+    </div>
+    <form action="http://localhost:8000/accounts/logout/" class="form-inline my-2 my-lg-0">
+      <button class="btn btn-secondary" type="submit">Logout</button>
+    </form>
+  {% else %}
     <div id="login" class="navbar-nav">
       <a class="nav-item nav-link active" href="http://localhost:8000/accounts/login/">Log-In <span class="sr-only">(current)</span></a>
     </div>
-  </div>
-
-  <form action= "http://localhost:8000/accounts/register/" class="form-inline my-2 my-lg-0">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign-Up</button>
-  </form>
+    <form action= "http://localhost:8000/accounts/register/" class="form-inline my-2 my-lg-0">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign-Up</button>
+    </form>
+  {% endif %}
 </nav>
 
 <div class = "bg">

@@ -15,6 +15,15 @@
         <a class="nav-item nav-link active" href="http://localhost:8000/accounts/login/">Log-In <span class="sr-only">(current)</span></a>
       </div>
     </div>
+
+    {% if user.is_authenticated %}
+    <div id=profile class="navbar-nav">
+      <a href="http://localhost:8000/accounts/profile/">My Books <span class="sr-only">(current)</span></a>
+    </div>
+    <form action="http://localhost:8000/accounts/logout/" class="form-inline my-2 my-lg-0">
+      <button class="btn btn-secondary" type="submit">Logout</button>
+    </form>
+    {% endif %}
   
     <form action= "http://localhost:8000/accounts/register/" class="form-inline my-2 my-lg-0">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign-Up</button>
@@ -40,7 +49,17 @@
         <td>{{ Book.title }}</td>
         <td>{{ Book.author }}</td>
         <td>{{ Book.publish_date }}</td>
-        <td>status</td>
+        {% if user.is_authenticated %}
+          {% for status in book_status %}
+            {% if status.checkout %}
+            <td> <a href= "{% url 'return_book' status.id %}">This book is checked out</a></td>
+            {% else %}
+            <td> <a href="{% url 'add_book' status.id %}">check out</a></td>
+            {% endif %}
+          {% endfor %}
+        {% else %}
+        <td>Log-in or create an account to check out books</td>
+        {% endif %}
       </tr>
       {% endfor %}
     </table>

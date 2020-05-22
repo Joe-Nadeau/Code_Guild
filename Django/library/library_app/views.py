@@ -9,9 +9,23 @@ def display_homepage(request):
 
 def check_out_books(request):
     books = Book.objects.all()
+    status = book_status.objects.all()
 
     context = {
         'books': books,
+        'status': status,
     }
 
     return render(request, 'books.html', context) # context is sent to 'books.html'
+
+def add_book(request, id):
+    return render(request, "landing_page.html")
+
+def return_book(request, id):
+    return render(request, "landing_page.html")
+
+
+# def remove(request, id):
+#     todo_item = TodoItem.objects.get(id = id)
+#     todo_item.delete()
+#     return redirect('todo_list')

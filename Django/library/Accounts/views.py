@@ -10,7 +10,7 @@ def login_user(request):
     user = authenticate(request, username=username, password=password)
     if user is not None:
         login(request, user)
-        return render(request, 'todos/list.html' )
+        return render(request, 'landing_page.html' )
     else:
         return render(request, 'accounts/login.html')
 
@@ -36,3 +36,7 @@ def register_new_user(request):
         return redirect('homepage')
     else:
         return render(request, 'accounts/register.html')
+
+def user_profile(request):
+    return render(request, "Accounts/profile.html")
+    

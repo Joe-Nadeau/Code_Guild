@@ -39,6 +39,13 @@ class book_status(models.Model):
     checkout = models.BooleanField(default = False)
     timestamp = models.DateTimeField(auto_now_add = True)
 
+    def check_out(self):
+        self.checkout = True
+        return self.checkout
+
+    def check_in(self):
+        self.checkout = False
+        return self.checkout
 
 
 
