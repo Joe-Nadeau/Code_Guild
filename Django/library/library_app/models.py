@@ -18,6 +18,21 @@ class Book(models.Model):
     title = models.CharField(max_length=200, default='Title Goes Here')
     publish_date = models.DateField(blank = True, null = True)
     author = models.ForeignKey(author, on_delete=models.CASCADE)
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null = True)
+    due_date = models.DateTimeField(null = True, blank = True)
+    checked_out = models.BooleanField(default = False)
+
+    # def check_out(self):
+    #     self.checked_out = True
+    #     self.user = user_id
+    #     sef.due_date = due_date + 2 weeks
+    #     return self.checkout
+
+    # def check_in(self):
+    #     self.checked_out = False
+    #     self.user = None
+    #     self.due_date = None
+    #     return self.checked_out
 
     def __str__(self):
         return self.title
@@ -33,19 +48,12 @@ class Book(models.Model):
 # checkout: a boolean indicating whether the book was checked out or checked in
 # timestamp: a datetime that records when the book was checked out or in
 
-class book_status(models.Model):
-    book = models.CharField(max_length=200, default='Title Goes Here')
-    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null = True)
-    checkout = models.BooleanField(default = False)
-    timestamp = models.DateTimeField(auto_now_add = True)
+# class book_status(models.Model):
+#     book = models.CharField(max_length=200, default='Title Goes Here')
+    
 
-    def check_out(self):
-        self.checkout = True
-        return self.checkout
 
-    def check_in(self):
-        self.checkout = False
-        return self.checkout
+
 
 
 
