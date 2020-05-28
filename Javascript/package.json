@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "nodemon": "^2.0.4",
+    "prompt": "^1.0.0",
     "readline-sync": "^1.4.10"
   }
 }
