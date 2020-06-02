@@ -1,6 +1,5 @@
-name,favorite_fruit, favorite_color
-kevin,bananas,blue
-kelsey,starfruit,yellow
-james,apples,red
-kim,grapes,purple
-joey,watermelon,green
+Name, Fruit, Color,
+Jim, Apple, Red,
+Kim, Banana, Yellow,
+Steve, Grape, Purple,
+Sue, Strawberry, Green,

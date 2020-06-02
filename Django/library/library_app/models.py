@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
+import datetime
 from django.contrib.auth import get_user_model
 
 # Book: a model representing a book, with a title, publish date, and an author (foreign key)
@@ -18,21 +19,19 @@ class Book(models.Model):
     title = models.CharField(max_length=200, default='Title Goes Here')
     publish_date = models.DateField(blank = True, null = True)
     author = models.ForeignKey(author, on_delete=models.CASCADE)
-    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null = True)
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null = True, blank = True)
     due_date = models.DateTimeField(null = True, blank = True)
     checked_out = models.BooleanField(default = False)
 
-    # def check_out(self):
-    #     self.checked_out = True
-    #     self.user = user_id
-    #     sef.due_date = due_date + 2 weeks
-    #     return self.checkout
-
-    # def check_in(self):
-    #     self.checked_out = False
-    #     self.user = None
-    #     self.due_date = None
-    #     return self.checked_out
+    def check_out(self, borrower):
+        self.checked_out = True
+        self.user = borrower
+        self.due_date = datetime.datetime.now() + datetime.timedelta(days=14)
+        
+    def check_in(self):
+        self.checked_out = False
+        self.user = None
+        self.due_date = None
 
     def __str__(self):
         return self.title

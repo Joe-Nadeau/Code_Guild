@@ -6,7 +6,7 @@ from .models import Todo
 
 # view to get all of the todos from the database for the logged in user and send them to the 'todos/list.html' view
 def todo_list(request):
-    todos = Todo.objects.filter(user=request.user.id)  # get all of the todos from the database and store them in todos
+    todos = Todo.objects.filter(id=request.user.id)  # get all of the todos from the database and store them in todos
     # Item.objects.filter(user=self.request.user)
     
     # print(request.user.id) # < The request IS the USER sending the request
@@ -18,7 +18,7 @@ def todo_list(request):
 #  q1 = Entry.objects.filter(headline__startswith="What")
     # create the context dictionary to send the todos to the template
     context = {
-        'todos': todos
+        'todos': todos,
     }
 
     return render(request, 'todos/list.html', context) # context is sent to 'todos/list.html'

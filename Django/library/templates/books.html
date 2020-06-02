@@ -36,7 +36,6 @@
     <h1>Book List</h1>
     <table>
       <tr>
-        <th></th>
         <th>Title</th>
         <th>Author</th>
         <th>Publication Date</th>
@@ -44,19 +43,24 @@
       </tr>
       {% for book in books %}
       <tr>
-        <td></td>
         <td>{{ book.title }}</td>
         <td>{{ book.author }}</td>
         <td>{{ book.publish_date }}</td>
         {% if user.is_authenticated %}
-            <td> <a href= "#">This book is checked out</a></td>
-            {% else %}
-            <td> <a href="#">check out</a></td>
+            <td>
+              {% if book.checked_out %}
+              <td>This book is on loan</td>
+              {% else %}
+              <form method = "POST" action = "{% url 'library_app:loan_book' book.id %}">
+              {% csrf_token %}
+                <button type = submit>Check Out</button>
+              </form>
+              {% endif %}
+          </td>
             {% endif %}
       </tr>
       {% endfor %}
     </table>
-
 </div>
 
 

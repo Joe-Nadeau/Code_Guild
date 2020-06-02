@@ -30,7 +30,12 @@
 </nav>
 
 <div class = "bg">
-
+  <h1>My Books</h1>
+  <ul>
+    {% for book in borrowed_books %}
+      <li>{{ book.title }}</li>
+    {% endfor %}
+  </ul>
     
 </div>
 {% endblock %}

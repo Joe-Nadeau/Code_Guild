@@ -17,12 +17,18 @@ def check_out_books(request):
     return render(request, 'books.html', context) # context is sent to 'books.html'
 
 def loan_book(request, id):
-    borrower = request.user
     book = Book.objects.get(id = id)
-    print(book.title)
+    book.check_out(request.user)
+    book.save()
+    return redirect('profile')
 
 def return_book(request, id):
-    return render(request, "landing_page.html")
+    book = Book.objects.get(id = id)
+    book.check_in()
+    book.save()
+    return redirect('profile')
+
+
 
 
 # def remove(request, id):

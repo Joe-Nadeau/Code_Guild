@@ -1,11 +1,11 @@
 Create a directory
 cd into the new directory
 pipenv shell
-piplist (to see if the evironment was installed)
+pip list (to see if the evironment was installed)
 pipenv install Django(if it isn't already in the list of installed items)
 django-admin startproject project_name_here . (don't forget the dot!)
 python manage.py runserver (to see if it worked, you should see a rocketship in the browser)
-python manage.py start app application_name_here
+python manage.py startapp application_name_here
 settings.py -> Installed Apps -> add new app
 go back to application file
 create a Urls.py file
@@ -43,4 +43,4 @@ create a static folder at  the same level as the templates app and projet folder
         a main.js file
 
 go back to your settings.py file and at the end add this:
-    STATICFILES_DIRS = [os.path.join('static')]
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]

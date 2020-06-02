@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import get_user_model, login, logout, authenticate
+from library_app.models import Book, author
 
 # Create your views here.
 
@@ -16,7 +17,7 @@ def login_user(request):
 
 def logout_user(request):
     logout(request)
-    return redirect('homepage')
+    return redirect('library_app:homepage')
 
 User = get_user_model()
 # creates new user
@@ -33,10 +34,15 @@ def register_new_user(request):
         new_user.set_password(password)
         new_user.save()
 
-        return redirect('homepage')
+        return redirect('library_app:homepage')
     else:
         return render(request, 'accounts/register.html')
 
 def user_profile(request):
-    return render(request, "Accounts/profile.html")
+    borrowed_books = Book.objects.filter(user = request.user)
+
+    context = {
+        'borrowed_books':borrowed_books,
+    }
+    return render(request, "Accounts/profile.html", context)
     
