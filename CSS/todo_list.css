@@ -3,7 +3,7 @@ ul {
 }
 
 .mark {
-
+    text-decoration: line-through;
 }
 
 #itemText {
