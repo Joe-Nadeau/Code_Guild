@@ -10,13 +10,8 @@ btn.addEventListener("click", function(){
     ul.insertBefore(li, ul.childNodes[0]);
 })
 
-btn.addEventListener("click", function(){
-    let all_li = document.querySelectorAll("li")
-    for (let li of all_li){
-        li.addEventListener("click", function(){
-            li.classList.toggle("mark")
-        })
-    }
+document.querySelector("#theList").addEventListener('click', event => {
+    event.target.classList.toggle("mark")
 })
 
 btnRemove.addEventListener("click", function(){
