@@ -1,4 +1,5 @@
 var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+const url = 'https://randomuser.me/api/?results=10';
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -8,3 +9,10 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     zoomOffset: -1,
     accessToken: 'pk.eyJ1Ijoiam5hZDY2NjkiLCJhIjoiY2tiMW8wYW11MDJ4cDJ0bXlsem14b210NyJ9.J97-mQdVpCL9L9ORqe7Q9Q'
 }).addTo(mymap);
+
+axios
+    .get(url)
+    .then((response) => { 
+        console.log(response);
+    })
+    .catch((err) => console.log(err))
