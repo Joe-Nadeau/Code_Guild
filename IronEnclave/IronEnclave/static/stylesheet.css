@@ -13,10 +13,20 @@ h1 {
     text-align: center;
 }
 
+#choice {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#signIn {
+    font-size: 20px;
+}
+
 button {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 80px;
-    font-weight: 100;
+    font-size: 60px;
     background-color: rgb(10, 43, 53);
     color: whitesmoke;
     border-radius: 12px;
