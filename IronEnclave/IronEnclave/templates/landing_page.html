@@ -1,11 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<button id="signIn">Sign-In</button>
+
+
+
+
+
 
 <div class="container" id="choice">
-    <button>Visit<br/>the<br/>Enclave</button>
-    <button>Join<br/>the<br/>Enclave</button>
+    <h1>IRON ENCLAVE</h1>
+    <form id="header" action="signin">
+        <button type="submit" id="signIn">Sign-In</button>
+    </form>
+    <form action="homepage">
+        <button type="submit">Visit<br/>the<br/>Enclave</button>
+    </form>
+    <form action="register">
+        <button type="submit">Join<br/>the<br/>Enclave</button>
+    </form>
 </div>
 
 {% endblock %}
