@@ -6,31 +6,25 @@ body {
     background-attachment: fixed;
 }
 
-h1 {
-    margin: 0px;
-    /* display: inline-flex;
-    flex-flow: row; */
+#choice h1 {
     font-family: 'Germania One', serif;
     color: whitesmoke;
     font-size: 150px;
-    text-align: center;
-}
-
-#header button {
-    float: right;
+    align-self: center;
+    margin-left: 80px;
 }
 
 #choice {
     display: flex;
+    flex-flow: wrap;
     justify-content: center;
-    align-items: center;
-    margin: 70px;
-    width: 800px;
+    align-items: flex-start;
 }
 
 #signIn {
-    float: right;
+    align-self: flex-end;
     font-size: 30px;
+    width:120px;
     background-color: rgb(10, 43, 53);
     color:rgb(130, 187, 130);
     transition-duration: 0.4s;
@@ -53,4 +47,14 @@ button {
 button:hover {
     background-color: rgb(73, 77, 83);
     color: rgb(170, 184, 189);
+}
+
+#sidenav {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Germania One', serif;
+    font-size: 50px;
+    margin: 10px;
+    color: rgb(118, 148, 173);
+    background-color: chartreuse;
 }
