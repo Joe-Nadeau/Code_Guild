@@ -8,3 +8,6 @@ def landing_page(request):
 
 def home_page(request):
     return render(request, "home_page.html")
+
+def resources(request):
+    return render(request, "resources.html")

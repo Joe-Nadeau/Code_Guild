@@ -14,6 +14,23 @@ body {
     margin-left: 80px;
 }
 
+#choice h2 {
+    font-family: 'Germania One', serif;
+    color:rgb(130, 187, 130);
+    font-size: 100px;
+    align-self: center;
+}
+
+#choice h1 a {
+    color: whitesmoke;
+    transition-duration: 0.4s;
+}
+
+#choice h1 a:hover {
+    color: rgb(130, 187, 130);
+    text-decoration: none;
+}
+
 #choice {
     display: flex;
     flex-flow: wrap;
@@ -56,5 +73,12 @@ button:hover {
     font-size: 50px;
     margin: 10px;
     color: rgb(118, 148, 173);
-    background-color: chartreuse;
+}
+
+#resDropdowns {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    border-radius: 12px;
+    background-color: rgb(11, 22, 22);
 }
