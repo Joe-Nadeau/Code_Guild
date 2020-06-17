@@ -34,9 +34,9 @@ def register_new_user(request):
         new_user.set_password(password)
         new_user.save()
 
-        return redirect('ironenclave:home/')
+        return redirect('iEcommunity:home_page')
     else:
         return render(request, 'iEaccounts/register.html')
 
 def user_profile(request):
-    pass
+    return render(request, 'iEaccounts/profile.html')

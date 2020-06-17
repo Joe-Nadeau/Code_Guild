@@ -49,7 +49,7 @@ body {
 }
 #signIn:hover {
     background-color: rgb(130, 187, 130);
-    color: rgb(10, 43, 53);
+    color: whitesmoke;
 }
 
 button {
@@ -63,7 +63,7 @@ button {
 }
 
 button:hover {
-    background-color: rgb(73, 77, 83);
+    background-image: url(https://media.giphy.com/media/Ta1MVGKCG2GFq/200.gif);
     color: rgb(170, 184, 189);
 }
 
@@ -87,3 +87,26 @@ button:hover {
 #resDropdowns {
 
 }
+
+#SignInForm {
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+    margin-top: 60px;
+}
+
+#Banner {
+    font-family: 'Germania One', serif;
+    color: whitesmoke;
+    font-size: 150px;
+    text-align: center;
+}
+
+#RegistrationForm {
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+    margin-top: 30px;
+    font-size: 20px;
+}
+
