@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="http://localhost:8000/iEaccounts/updateProf/" method="POST">
+    {% csrf_token %}
+    <div>
+        <div>
+            <label for="inputFname">First Name:</label>
+            <input type="text" class="form-control" id="inputFname" name="first_name">
+        </div>
+        <div>
+            <label for="inputLname">Last Name:</label>
+            <input type="text" class="form-control" id="inputLname" name="last_name">
+        </div>
+        <div>
+            <label for="inputUname">Username:</label>
+            <input type="text" class="form-control" id="inputUname" name="user_name">
+        </div>
+        <div>
+            <label for="inputAge">Age:</label>
+            <input type="text" class="form-control" id="inputAge" name="age">
+        </div>
+        <div>
+            <label for="inputImg">Profile Image:</label>
+            <input type="file" class="form-control" id="inputImg" name="profile_image">
+        </div>
+        <div>
+            <label for="inputBio">Bio:</label>
+            <input type="text" class="form-control" id="inputBio" name="bio">
+        </div>
+        <div>
+            <label for="inputGender">Gender:</label>
+            <input type="text" class="form-control" id="inputGender" name="gender">
+        </div>
+        <div>
+            <label for="inputWeightClass">Weight Class:</label>
+            <input type="text" class="form-control" id="inputWeightClass" name="weight_class">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">Save Changes</button>
+</form>
+
+<button>
+    <a href="http://localhost:8000/iEaccounts/profile/">Return to my Profile</a>
+</button>
+
+
+{% endblock %}

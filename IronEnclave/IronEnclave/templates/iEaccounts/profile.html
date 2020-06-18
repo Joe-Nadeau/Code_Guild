@@ -3,9 +3,16 @@
 {% block content %}
 
 <div id="profile" class="container">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQVXwbnDc62Wnc2lpBLlfzVeGWBdoWurxm1ka90iVBmahlobQeB&usqp=CAU" alt="power woman">
   <h1>{{ prof_mod }}</h1>
   <h1>{{ graph_mod }}</h1>
 </div>
 
+<form action="http://localhost:8000/iEaccounts/updateProf/">
+  <button type="submit" id="updateProf">Update My Profile</button>
+</form>
+
 {% endblock %}
+
+<form id="signInForm" action="http://localhost:8000/iEaccounts/login/">
+  <button type="submit" id="signIn">Sign-In</button>
+</form>

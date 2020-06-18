@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import get_user_model, login, logout, authenticate
 from iEaccounts.models import Users, Profiles
-from iEgraph.models import graph
+from iEgraph.models import Graph
 
 # Create your views here.
 
@@ -41,7 +41,7 @@ def register_new_user(request):
 
 def user_profile(request):
     prof_mod = Profiles.objects.filter(user = request.user)
-    graph_mod = graph.objects.filter(user = request.user)
+    graph_mod = Graph.objects.filter(user = request.user)
 
     context = {
         'prof_mod': prof_mod,
@@ -52,8 +52,27 @@ def user_profile(request):
 
 # POST-Updating profile
 def update_profile(request):
-    return redirect('profile')
+    if request.method == 'POST':
+    
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        user_name = request.POST['user_name']
+        age = request.POST['age']
+        profile_img = request.POST['profile_img']
+        bio = request.POST['bio']
+        gender = request.POST['gender']
+        weight_class = request.POST['weight_class']
+    
+        return redirect('profile')
+
+    else:
+        return render(request, 'iEaccounts/update_profile.html')
 
 def update_graph(request):
-    return redirect('profile')
+    if request.method == 'POST':
+
+        weight = request.POST['weight']
+        lift = request.POST['lift']
+
+        return redirect('profile')
 
