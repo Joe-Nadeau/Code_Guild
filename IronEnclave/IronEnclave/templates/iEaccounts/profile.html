@@ -2,29 +2,10 @@
 
 {% block content %}
 
-<button class="tablink" onclick="openPage('Home', this, 'red')">Bio</button>
-<button class="tablink" onclick="openPage('News', this, 'green')" id="defaultOpen">Stats</button>
-<button class="tablink" onclick="openPage('Contact', this, 'blue')">Graph</button>
-<button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
-
-<div id="Home" class="tabcontent">
-  <h3>Bio</h3>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, nisi mollitia! Itaque deserunt mollitia ut necessitatibus inventore reprehenderit blanditiis. Quidem nemo quas rerum dolores fugiat labore blanditiis tenetur asperiores cupiditate.</p>
-</div>
-
-<div id="News" class="tabcontent">
-  <h3>Stats</h3>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus nobis officiis deleniti neque quia iure sapiente nesciunt? Quas officiis ipsum blanditiis odio, ex est eos aperiam beatae repudiandae temporibus? Commodi!</p>
-</div>
-
-<div id="Contact" class="tabcontent">
-  <h3>Graph</h3>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ipsa recusandae rerum ipsum animi? Adipisci nostrum eveniet sequi velit unde cum veritatis esse aliquam ipsa id? Aperiam itaque unde quidem.</p>
-</div>
-
-<div id="About" class="tabcontent">
-  <h3>About</h3>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eligendi corporis est, aspernatur eius quod omnis tempora accusamus fugiat numquam aut cumque neque mollitia corrupti dolorem, provident sequi pariatur unde.</p>
+<div id="profile" class="container">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQVXwbnDc62Wnc2lpBLlfzVeGWBdoWurxm1ka90iVBmahlobQeB&usqp=CAU" alt="power woman">
+  <h1>{{ prof_mod }}</h1>
+  <h1>{{ graph_mod }}</h1>
 </div>
 
 {% endblock %}

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import get_user_model, login, logout, authenticate
 from iEaccounts.models import Users, Profiles
+from iEgraph.models import graph
 
 # Create your views here.
 
@@ -39,4 +40,20 @@ def register_new_user(request):
         return render(request, 'iEaccounts/register.html')
 
 def user_profile(request):
-    return render(request, 'iEaccounts/profile.html')
+    prof_mod = Profiles.objects.filter(user = request.user)
+    graph_mod = graph.objects.filter(user = request.user)
+
+    context = {
+        'prof_mod': prof_mod,
+        'graph_mod': graph_mod,
+    }
+
+    return render(request, 'iEaccounts/profile.html', context)
+
+# POST-Updating profile
+def update_profile(request):
+    return redirect('profile')
+
+def update_graph(request):
+    return redirect('profile')
+
