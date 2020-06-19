@@ -40,7 +40,7 @@ def register_new_user(request):
         return render(request, 'iEaccounts/register.html')
 
 def user_profile(request):
-    prof_mod = Profiles.objects.filter(user = request.user)
+    prof_mod = Profiles.objects.get(user = request.user)
     graph_mod = Graph.objects.filter(user = request.user)
 
     context = {
@@ -54,15 +54,19 @@ def user_profile(request):
 def update_profile(request):
     if request.method == 'POST':
     
-        first_name = request.POST['first_name']
-        last_name = request.POST['last_name']
-        user_name = request.POST['user_name']
-        age = request.POST['age']
-        profile_img = request.POST['profile_img']
-        bio = request.POST['bio']
-        gender = request.POST['gender']
-        weight_class = request.POST['weight_class']
-    
+        profile_update = Profiles(
+        user = request.user,
+        first_name = request.POST['first_name'],
+        last_name = request.POST['last_name'],
+        age = request.POST['age'],
+        profile_img = request.FILES.get('profile_img'),
+        bio = request.POST['bio'],
+        gender = request.POST['gender'],
+        weight_class = request.POST['weight_class'],
+        )
+
+        profile_update.save()
+
         return redirect('profile')
 
     else:

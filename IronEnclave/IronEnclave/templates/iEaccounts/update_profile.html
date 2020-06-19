@@ -14,10 +14,6 @@
             <input type="text" class="form-control" id="inputLname" name="last_name">
         </div>
         <div>
-            <label for="inputUname">Username:</label>
-            <input type="text" class="form-control" id="inputUname" name="user_name">
-        </div>
-        <div>
             <label for="inputAge">Age:</label>
             <input type="text" class="form-control" id="inputAge" name="age">
         </div>
@@ -34,8 +30,12 @@
             <input type="text" class="form-control" id="inputGender" name="gender">
         </div>
         <div>
-            <label for="inputWeightClass">Weight Class:</label>
-            <input type="text" class="form-control" id="inputWeightClass" name="weight_class">
+            <select name="weight_class" id="weightClass">
+              <option value="{ weight_class_choices[0][0]}">43kg/94lbs</option>
+              <option value=""></option>
+              <option value="">Mercedes</option>
+              <option value="audi">Audi</option>
+            </select>
         </div>
     </div>
     <button type="submit" class="btn btn-success">Save Changes</button>

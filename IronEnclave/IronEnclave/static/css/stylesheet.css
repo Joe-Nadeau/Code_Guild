@@ -110,3 +110,6 @@ button:hover {
     font-size: 20px;
 }
 
+#profile h1 {
+    color: thistle;
+}

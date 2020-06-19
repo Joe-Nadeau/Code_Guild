@@ -2,10 +2,21 @@
 
 {% block content %}
 
+<h1 id="Banner">IRON ENCLAVE</h1>
+
+
 <div id="profile" class="container">
-  <h1>{{ prof_mod }}</h1>
-  <h1>{{ graph_mod }}</h1>
+  <h1>Name: {{ prof_mod.first_name }} {{ prof_mod.last_name }}</h1>
+  <h1>Age: {{ prof_mod.age }}</h1>
+  <h1>Bio: {{ prof_mod.bio }}</h1>
+  <h1>Gender: {{ prof_mod.gender }}</h1>
+  <h1>Weight Class:{{ prof_mod.weight_class }}</h1>
+  <h1>Graph: {{ graph_mod }}</h1>
 </div>
+
+<!-- {% for book in borrowed_books %}
+<li>{{ book.title }}</li>
+{% endfor %} -->
 
 <form action="http://localhost:8000/iEaccounts/updateProf/">
   <button type="submit" id="updateProf">Update My Profile</button>

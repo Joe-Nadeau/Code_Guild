@@ -11,11 +11,11 @@ class Users(models.Model):
 
 class Profiles(models.Model):
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null = True, blank = True)
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    age = models.CharField(max_length=3)
-    profile_img = models.ImageField(upload_to='profile')
-    bio = models.CharField(max_length=10000)
+    first_name = models.CharField(max_length=30, blank = True)
+    last_name = models.CharField(max_length=30, blank = True)
+    age = models.CharField(max_length=3, blank = True)
+    profile_img = models.ImageField(blank = True)
+    bio = models.CharField(max_length=10000, blank = True)
 
     gender_choice = [
         ("M", "Male"),
