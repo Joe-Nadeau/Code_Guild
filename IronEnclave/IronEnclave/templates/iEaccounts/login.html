@@ -7,7 +7,7 @@
 
 
 <div id="SignInForm" class="container">
-    <form action="{% url 'login_page' %}" method="POST">
+    <form action="{% url 'iEaccounts:login_page' %}" method="POST">
         {% csrf_token%}
     <div class="form-group">
         <label for="InputUsername">Username:</label>

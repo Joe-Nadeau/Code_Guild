@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.http import HttpResponse
 from django.contrib.auth import get_user_model, login, logout, authenticate
 from iEaccounts.models import Users, Profiles
@@ -7,18 +7,20 @@ from iEgraph.models import Graph
 # Create your views here.
 
 def login_user(request):
-    username = request.POST.get('InputUsername')
-    password = request.POST.get('InputPassword1')
-    user = authenticate(request, username=username, password=password)
-    if user is not None:
-        login(request, user)
-        return render(request, 'home_page.html' )
+    if request.method == 'POST':
+        username = request.POST.get('InputUsername')
+        password = request.POST.get('InputPassword1')
+        if user is not None:
+            login(request, user)
+            return render(request, 'home_page.html' )
+        else:
+            return redirect('iEaccounts:login_page')
     else:
         return render(request, 'iEaccounts/login.html')
 
 def logout_user(request):
     logout(request)
-    return redirect('ironenclave:home/')
+    return redirect('iEcommunity:home_page')
 
 User = get_user_model()
 # creates new user

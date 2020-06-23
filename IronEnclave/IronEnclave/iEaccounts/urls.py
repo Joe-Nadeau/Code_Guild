@@ -1,6 +1,7 @@
 from django.urls import path
 from.import views
 
+app_name = 'iEaccounts'
 urlpatterns = [
     path('login/', views.login_user, name = 'login_page'),
     path('register/', views.register_new_user, name = 'register'),

@@ -4,13 +4,16 @@
 
 <h1 id="Banner">IRON ENCLAVE</h1>
 
+<form action="http://localhost:8000/iEaccounts/logout/">
+  <button type="submit" id="logOut">Log-Out</button>
+</form>
 
 <div id="profile" class="container">
   <h1>Name: {{ prof_mod.first_name }} {{ prof_mod.last_name }}</h1>
   <h1>Age: {{ prof_mod.age }}</h1>
   <h1>Bio: {{ prof_mod.bio }}</h1>
   <h1>Gender: {{ prof_mod.gender }}</h1>
-  <h1>Weight Class:{{ prof_mod.weight_class }}</h1>
+  <h1>Weight Class: {{ prof_mod.weight_class }}</h1>
   <h1>Graph: {{ graph_mod }}</h1>
 </div>
 

@@ -5,24 +5,29 @@
 
 <div class="container" id="choice">
     <h1>IRON ENCLAVE</h1>
-
-    <form id="signInForm" action="http://localhost:8000/iEaccounts/login/">
+    {% if user.is_authenticated %}
+    <form action="{% url 'iEaccounts:logout' %}">
+        <button type="submit" id="logOut">Log-Out</button>
+    </form>
+    {% else %}
+    <form id="signInForm" action="{% url 'iEaccounts:login_page' %}">
         <button type="submit" id="signIn">Sign-In</button>
     </form>
+    {% endif %}
 </div>
 
 
 <div class="container" id="sidenav">
     <ul id="navUL" class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link active" href="http://localhost:8000/resources/">Resources</a>
+            <a class="nav-link active" href="">Resources</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Forum</a>
         </li>
         {% if user.is_authenticated %}
         <li>
-            <a href="http://localhost:8000/iEaccounts/profile/">My Profile</a>
+            <a href="#">My Profile</a>
         </li>
         {% endif %}
     </ul>

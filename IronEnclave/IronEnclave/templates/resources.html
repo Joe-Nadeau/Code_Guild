@@ -5,9 +5,15 @@
 
 <div class="container" id="choice">
     <h1><a href="http://localhost:8000/home/">IRON ENCLAVE</a></h1>
+    {% if user.is_authenticated %}
+    <form action="http://localhost:8000/iEaccounts/logout/">
+        <button type="submit" id="logOut">Log-Out</button>
+    </form>
+    {% else %}
     <form id="signInForm" action="http://localhost:8000/iEaccounts/login/">
         <button type="submit" id="signIn">Sign-In</button>
     </form>
+    {% endif %}
     <h2>Resources</h2>
 </div>
 
