@@ -10,6 +10,7 @@ def login_user(request):
     if request.method == 'POST':
         username = request.POST.get('InputUsername')
         password = request.POST.get('InputPassword1')
+        user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
             return render(request, 'home_page.html' )

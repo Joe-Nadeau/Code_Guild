@@ -7,10 +7,12 @@
     <h1>IRON ENCLAVE</h1>
     {% if user.is_authenticated %}
     <form action="{% url 'iEaccounts:logout' %}">
+        {% csrf_token %}
         <button type="submit" id="logOut">Log-Out</button>
     </form>
     {% else %}
     <form id="signInForm" action="{% url 'iEaccounts:login_page' %}">
+        {% csrf_token %}
         <button type="submit" id="signIn">Sign-In</button>
     </form>
     {% endif %}
@@ -20,14 +22,14 @@
 <div class="container" id="sidenav">
     <ul id="navUL" class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link active" href="">Resources</a>
+            <a class="nav-link active" href="{% url 'iEcommunity:resources' %}">Resources</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Forum</a>
+            <a class="nav-link" href="{% url 'iEcommunity:forum_main' %}">Forum</a>
         </li>
         {% if user.is_authenticated %}
         <li>
-            <a href="#">My Profile</a>
+            <a href="{% url 'iEaccounts:profile' %}">My Profile</a>
         </li>
         {% endif %}
     </ul>

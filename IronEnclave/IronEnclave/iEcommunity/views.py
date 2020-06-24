@@ -11,3 +11,6 @@ def home_page(request):
 
 def resources(request):
     return render(request, "resources.html")
+
+def forum_main(request):
+    return render(request, "iEcommunity/forum_main.html")
