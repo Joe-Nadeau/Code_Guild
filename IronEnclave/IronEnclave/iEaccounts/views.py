@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.http import HttpResponse
 from django.contrib.auth import get_user_model, login, logout, authenticate
-from iEaccounts.models import Users, Profiles
+from iEaccounts.models import Profiles
 from iEgraph.models import Graph
 
 # Create your views here.
@@ -38,6 +38,14 @@ def register_new_user(request):
         new_user.set_password(password)
         new_user.save()
 
+        new_profile = Profiles(
+        user = new_user,
+        first_name = request.POST['first_name'],
+        last_name = request.POST['last_name'],
+        )
+
+        new_profile.save()
+
         return redirect('iEcommunity:home_page')
     else:
         return render(request, 'iEaccounts/register.html')
@@ -58,7 +66,7 @@ def update_profile(request):
     if request.method == 'POST':
     
         profile_update = Profiles(
-        user = request.user,
+        user = user.objects.get(id = id),
         first_name = request.POST['first_name'],
         last_name = request.POST['last_name'],
         age = request.POST['age'],

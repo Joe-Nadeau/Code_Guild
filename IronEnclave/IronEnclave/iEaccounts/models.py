@@ -6,11 +6,8 @@ from django.contrib.auth import get_user_model
 
 # Create your models here.
 
-class Users(models.Model):
-    pass
-
 class Profiles(models.Model):
-    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null = True, blank = True)
+    user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE)
     first_name = models.CharField(max_length=30, blank = True)
     last_name = models.CharField(max_length=30, blank = True)
     age = models.CharField(max_length=3, blank = True)
