@@ -86,6 +86,7 @@ def update_profile(request, id):
         context = {
             'user': user,
             'profile': profile,
+            'weight_class': Profiles.weight_class_choices,
         }
         return render(request, 'iEaccounts/update_profile.html', context)
 
