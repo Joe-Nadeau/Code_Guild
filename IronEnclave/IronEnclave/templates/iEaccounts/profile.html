@@ -4,7 +4,7 @@
 
 <h1 id="Banner">IRON ENCLAVE</h1>
 
-<form action="http://localhost:8000/iEaccounts/logout/">
+<form action="{% url 'iEaccounts:logout' %}">
   <button type="submit" id="logOut">Log-Out</button>
 </form>
 
@@ -21,12 +21,12 @@
 <li>{{ book.title }}</li>
 {% endfor %} -->
 
-<form action="http://localhost:8000/iEaccounts/updateProf/">
+<form action="{% url 'iEaccounts:update_profile' user.id %}">
   <button type="submit" id="updateProf">Update My Profile</button>
 </form>
 
 {% endblock %}
 
-<form id="signInForm" action="http://localhost:8000/iEaccounts/login/">
+<form id="signInForm" action="{% url 'iEaccounts:login_page' %}">
   <button type="submit" id="signIn">Sign-In</button>
 </form>

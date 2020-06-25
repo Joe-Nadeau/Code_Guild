@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth import get_user_model, login, logout, authenticate
 from iEaccounts.models import Profiles
 from iEgraph.models import Graph
+User = get_user_model()
 
 # Create your views here.
 
@@ -23,7 +24,7 @@ def logout_user(request):
     logout(request)
     return redirect('iEcommunity:home_page')
 
-User = get_user_model()
+
 # creates new user
 def register_new_user(request):
     if request.method == 'POST':
@@ -62,26 +63,31 @@ def user_profile(request):
     return render(request, 'iEaccounts/profile.html', context)
 
 # POST-Updating profile
-def update_profile(request):
+def update_profile(request, id):
     if request.method == 'POST':
-    
-        profile_update = Profiles(
-        user = user.objects.get(id = id),
-        first_name = request.POST['first_name'],
-        last_name = request.POST['last_name'],
-        age = request.POST['age'],
-        profile_img = request.FILES.get('profile_img'),
-        bio = request.POST['bio'],
-        gender = request.POST['gender'],
-        weight_class = request.POST['weight_class'],
-        )
+        
+        profile = Profiles.objects.get(user = User.objects.get(id = id))
+        profile.first_name = request.POST['first_name']
+        profile.last_name = request.POST['last_name']
+        profile.age = request.POST['age']
+        profile.profile_img = request.FILES.get('profile_img')
+        profile.bio = request.POST['bio']
+        profile.gender = request.POST['gender']
+        profile.weight_class = request.POST['weight_class']
 
-        profile_update.save()
+        profile.save()
 
-        return redirect('profile')
+        return redirect('iEaccounts:profile')
 
     else:
-        return render(request, 'iEaccounts/update_profile.html')
+        user = User.objects.get(id = id)
+        profile = Profiles.objects.get(user = User.objects.get(id = id))
+        print(profile.weight_class_choices[0])
+        context = {
+            'user': user,
+            'profile': profile,
+        }
+        return render(request, 'iEaccounts/update_profile.html', context)
 
 def update_graph(request):
     if request.method == 'POST':
@@ -89,5 +95,5 @@ def update_graph(request):
         weight = request.POST['weight']
         lift = request.POST['lift']
 
-        return redirect('profile')
+        return redirect('iEaccounts:profile')
 
