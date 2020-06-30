@@ -8,6 +8,15 @@ verify_ssl = true
 [packages]
 django = "*"
 pillow = "*"
+pyyaml = "*"
+pythondateutil = "*"
+jinja2 = "*"
+numpy = "*"
+packaging = "*"
+tornado = "*"
+typing-extensions = "*"
+python-dateutil = "*"
+bokeh = "*"
 
 [requires]
 python_version = "3.8"

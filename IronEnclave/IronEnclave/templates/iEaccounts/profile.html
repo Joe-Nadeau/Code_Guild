@@ -9,12 +9,14 @@
 </form>
 
 <div id="profile" class="container">
+  <img src="{{ prof_mod.profile_img.url }}" width="200px">
   <h1>Name: {{ prof_mod.first_name }} {{ prof_mod.last_name }}</h1>
   <h1>Age: {{ prof_mod.age }}</h1>
   <h1>Bio: {{ prof_mod.bio }}</h1>
   <h1>Gender: {{ prof_mod.gender }}</h1>
   <h1>Weight Class: {{ prof_mod.weight_class }}</h1>
   <h1>Graph: {{ graph_mod }}</h1>
+  {{ div }}
 </div>
 
 <!-- {% for book in borrowed_books %}

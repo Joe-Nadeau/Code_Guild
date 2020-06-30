@@ -11,7 +11,7 @@ class Profiles(models.Model):
     first_name = models.CharField(max_length=30, blank = True)
     last_name = models.CharField(max_length=30, blank = True)
     age = models.CharField(max_length=3, blank = True)
-    profile_img = models.ImageField(blank = True)
+    profile_img = models.ImageField(upload_to='profile_image/', blank = True)
     bio = models.CharField(max_length=10000, blank = True)
 
     gender_choice = [
