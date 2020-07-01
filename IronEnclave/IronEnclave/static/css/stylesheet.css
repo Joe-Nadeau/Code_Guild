@@ -121,3 +121,7 @@ button:hover {
 #profile h1 {
     color: thistle;
 }
+
+.canvas {
+    background-color: whitesmoke;
+}

@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth import get_user_model, login, logout, authenticate
 from iEaccounts.models import Profiles
 from iEgraph.models import Graph
-from bokeh.plotting import figure, output_file, show
+from bokeh.plotting import figure, output_file, show, save
 from bokeh.resources import CDN
 from bokeh.embed import components, file_html
 
@@ -59,18 +59,11 @@ def user_profile(request):
     prof_mod = Profiles.objects.get(user = request.user)
     graph_mod = Graph.objects.filter(user = request.user)
 
-    # Test graph data
-    x = [1, 2, 3, 4, 5]
-    y = [6, 7, 4, 2, 6]
+    plot = figure()
+    plot.circle([1,2], [3,4])
 
-    # graph plot setup
-    plot = figure(title = 'Line Graph', x_axis_label='X-Axis', y_axis_label='Y-Axis', plot_width=400, plot_height=400)
-
-    # plot line
-    plot.line(x, y, line_width = 2)
-
-    # Store components
-    script, div = components(plot)
+    output_file("test.html")
+    save(plot)
 
     context = {
         'prof_mod': prof_mod,
