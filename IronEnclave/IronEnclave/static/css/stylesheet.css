@@ -6,6 +6,23 @@ body {
     background-attachment: fixed;
 }
 
+#jumbo {
+    background-image: url(https://wallpaperaccess.com/full/531304.jpg);
+    margin-bottom: 0px;
+}
+
+#darkNav {
+    display: flex;
+    margin-top: 0px;
+    padding: 5px;
+    font-family: 'Germania One', serif;
+}
+
+#darkNav form {
+    align-content: flex-end;
+}
+
+
 #choice h1 {
     font-family: 'Germania One', serif;
     color: whitesmoke;
@@ -61,7 +78,7 @@ body {
 }
 
 button {
-    margin: 10px;
+    margin: 0px;
     width: 200px;
     font-family: 'Germania One', serif;
     font-size: 55px;
@@ -71,6 +88,26 @@ button {
 }
 
 button:hover {
+    background-image: url(https://media.giphy.com/media/Ta1MVGKCG2GFq/200.gif);
+    color: rgb(170, 184, 189);
+}
+
+#resDropdowns .dropdown-item{
+    width: 100%;
+    text-align: center;
+}
+
+#resDropdowns button {
+    margin: 20px;
+    width: 200px;
+    font-family: 'Germania One', serif;
+    font-size: 55px;
+    background-color: rgb(10, 43, 53);
+    color: rgb(73, 77, 83);
+    border-radius: 12px;
+}
+
+#resDropdowns button:hover {
     background-image: url(https://media.giphy.com/media/Ta1MVGKCG2GFq/200.gif);
     color: rgb(170, 184, 189);
 }

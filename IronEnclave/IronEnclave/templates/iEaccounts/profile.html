@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h1 id="Banner">IRON ENCLAVE</h1>
+<h1><a href="http://localhost:8000/home/">IRON ENCLAVE</a></h1>
 
 <form action="{% url 'iEaccounts:logout' %}">
   <button type="submit" id="logOut">Log-Out</button>
@@ -15,7 +15,7 @@
   <h1>Bio: {{ prof_mod.bio }}</h1>
   <h1>Gender: {{ prof_mod.gender }}</h1>
   <h1>Weight Class: {{ prof_mod.weight_class }}</h1>
-  <h1>Graph: {{ graph_mod }}</h1>
+  <!-- <h1>Graph: {{ graph_mod }}</h1> -->
   <canvas id="myChart" width="400" height="250"></canvas>
 </div>
 

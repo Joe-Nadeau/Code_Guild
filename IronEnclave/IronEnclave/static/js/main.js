@@ -1,9 +1,9 @@
-var ctx = document.getElementById('myChart').getContext('2d');
+const ctx = document.getElementById('myChart').getContext('2d');
 
 Chart.defaults.global.defaultFontFamily = "Lato";
 Chart.defaults.global.defaultFontSize = 18;
 
-var personalRecords = {
+const personalRecords = {
     label: "Personal Records",
     data: [270, 205, 330],
     lineTension: 0,
@@ -11,7 +11,7 @@ var personalRecords = {
     borderColor: 'orange'
 };
 
-var goals = {
+const goals = {
     label: "Goal",
     data: [315, 225, 405],
     lineTension: 0,
@@ -19,18 +19,18 @@ var goals = {
     borderColor: 'green'
 };
 
-var lifts = {
+const lifts = {
     labels: ["squat", "bench", "deadlift"],
     datasets: [personalRecords, goals]
 };
 
-var chartOptions = {
+const chartOptions = {
     legend: {
         display: true,
         position: 'top',
-        lables: {
-            boxwidth: 80,
-            fontColor: 'black'
+        labels: {
+            boxwidth: 100,
+            fontColor: 'white'
         }
     }   ,
     scales: {
@@ -49,7 +49,7 @@ var chartOptions = {
 
 };
 
-var lineChart = new Chart(ctx, {
+const lineChart = new Chart(ctx, {
     type: 'line',
     data: lifts,
     options: chartOptions
@@ -57,10 +57,10 @@ var lineChart = new Chart(ctx, {
 
 Chart.plugins.register({
     beforeDraw: function(chartInstance, easing) {
-      var ctx = chartInstance.chart.ctx;
+      const ctx = chartInstance.chart.ctx;
       ctx.fillStyle = 'white'; // your color here
   
-      var chartArea = chartInstance.chartArea;
+      const chartArea = chartInstance.chartArea;
       ctx.fillRect(chartArea.left, chartArea.top, chartArea.right - chartArea.left, chartArea.bottom - chartArea.top);
     }
   });
