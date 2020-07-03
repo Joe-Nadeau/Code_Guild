@@ -12,17 +12,33 @@ body {
 }
 
 #darkNav {
-    display: flex;
-    margin-top: 0px;
-    padding: 5px;
+    margin: 0px;
+    padding: 0px;
     font-family: 'Germania One', serif;
+    font-size: 30px;
 }
 
-#darkNav form {
-    align-content: flex-end;
+#darkNav #homeTag {
+    font-size: 30px;
+    margin-left: 30px;
 }
 
+#darkNav ul li {
+    margin-right: 30px;
+}
 
+/* Landing Page */
+
+#choice form #homebutton {
+    margin: 100px;
+    align-self: center;
+}
+
+#choice form #registerbutton {
+    margin: 100px;
+    align-self: flex-end;
+    flex-grow: 1;
+}
 #choice h1 {
     font-family: 'Germania One', serif;
     color: whitesmoke;
@@ -41,8 +57,7 @@ body {
 #choice h3 {
     font-family: 'Germania One', serif;
     color: rgb(211, 203, 203);
-    font-size: 30px;
-    align-items: center;
+    font-size: 50px;
 }
 
 #choice h1 a {
@@ -59,22 +74,7 @@ body {
     display: flex;
     flex-flow: wrap;
     justify-content: center;
-    align-items: flex-start;
-}
-
-#signIn {
-    align-self: flex-end;
-    margin-left: 30px;
-    margin-right: 200px;
-    font-size: 30px;
-    width:120px;
-    background-color: rgb(10, 43, 53);
-    color:rgb(130, 187, 130);
-    transition-duration: 0.4s;
-}
-#signIn:hover {
-    background-color: rgb(130, 187, 130);
-    color: whitesmoke;
+    align-content: space-around;
 }
 
 button {

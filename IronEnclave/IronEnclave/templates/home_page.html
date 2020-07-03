@@ -10,20 +10,23 @@
     </div>
 </div>
 
-<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" id="darkNav">
-    <a class="navbar-brand" href="#">IE Home</a>
+<nav class="navbar navbar-dark bg-dark" id="darkNav">
+    <a class="navbar-brand" href="#" id="homeTag">IE Home</a>
     {% if user.is_authenticated %}
-    <form action="{% url 'iEaccounts:logout' %}">
-        {% csrf_token %}
-        <button type="submit" id="logOut">Log-Out</button>
-    </form>
+    <ul class="navbar-nav navbar-right">
+        <li class="nav-item">
+                <a href="{% url 'iEaccounts:logout' %}" class="nav-link" type="submit" id="logOut">Log-Out</a>
+        </li>
+    </ul>
+
     {% else %}
-    <form id="signInForm" action="{% url 'iEaccounts:login_page' %}" class="form-inline my-2 my-lg-0">
-        {% csrf_token %}
-        <button type="submit" id="signIn">Sign-In</button>
-    </form>
+    <ul class="navbar-nav navbar-right">
+        <li class="nav-item float-right">
+            <a href="{% url 'iEaccounts:login_page' %}" class="nav-link" type="submit" id="signIn">Sign-In</a>
+        </li>
+    </ul>
     {% endif %}
-  </nav>
+</nav>
 
 
 <div class="container" id="sidenav">

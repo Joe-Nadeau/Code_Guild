@@ -64,3 +64,5 @@ Chart.plugins.register({
       ctx.fillRect(chartArea.left, chartArea.top, chartArea.right - chartArea.left, chartArea.bottom - chartArea.top);
     }
   });
+
+//   turn this into three separate graphs. One for squat, one for deadlift, and one for bench. Have dates on the x-axis so that you can track progress over time.
