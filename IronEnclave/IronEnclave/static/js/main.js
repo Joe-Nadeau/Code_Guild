@@ -3,25 +3,25 @@ const ctx = document.getElementById('myChart').getContext('2d');
 Chart.defaults.global.defaultFontFamily = "Lato";
 Chart.defaults.global.defaultFontSize = 18;
 
-const personalRecords = {
-    label: "Personal Records",
-    data: [270, 205, 330],
+const personalRecord = {
+    label: "Squat Personal Record",
+    data: [135, 185, 205, 215, 225, 235, 250, 265, 270],
     lineTension: 0,
     fill: false,
     borderColor: 'orange'
 };
 
-const goals = {
-    label: "Goal",
-    data: [315, 225, 405],
+const goal = {
+    label: "Squat Goal",
+    data: [315, 315, 315, 315, 315, 315, 315, 315, 315, 315, 315, 315],
     lineTension: 0,
     fill: false,
     borderColor: 'green'
 };
 
 const lifts = {
-    labels: ["squat", "bench", "deadlift"],
-    datasets: [personalRecords, goals]
+    labels: ["1/2020", "2/2020", "3/2020", "4/2020", "5/2020", "6/2020", "7/2020", "8/2020", "9/2020", "10,2020", "11/2020", "12/2020"],
+    datasets: [personalRecord, goal]
 };
 
 const chartOptions = {

@@ -2,18 +2,29 @@
 
 {% block content %}
 
-<div class="container" id="choice">
-    <h1><a href="http://localhost:8000/home/">IRON ENCLAVE</a></h1>
-    {% if user.is_authenticated %}
-    <form action="http://localhost:8000/iEaccounts/logout/">
-        <button type="submit" id="logOut">Log-Out</button>
-    </form>
-    {% else %}
-    <form id="signInForm" action="http://localhost:8000/iEaccounts/login/">
-        <button type="submit" id="signIn">Sign-In</button>
-    </form>
-    {% endif %}
-    <h2>Forum</h2>
+<div class="jumbotron jumbotron-fluid" id="jumbo">
+    <div class="container" id="choice">
+      <h1><a href="http://localhost:8000/home/">IRON ENCLAVE</a></h1>
+      <h3 style="text-align: center">Forum</h3>
+    </div>
 </div>
+
+<nav class="navbar navbar-dark bg-dark" id="darkNav">
+    <a class="navbar-brand" href="http://localhost:8000/home/" id="homeTag">IE Home</a>
+    {% if user.is_authenticated %}
+    <ul class="navbar-nav navbar-right">
+        <li class="nav-item">
+                <a href="{% url 'iEaccounts:logout' %}" class="nav-link" type="submit" id="logOut">Log-Out</a>
+        </li>
+    </ul>
+
+    {% else %}
+    <ul class="navbar-nav navbar-right">
+        <li class="nav-item float-right">
+            <a href="{% url 'iEaccounts:login_page' %}" class="nav-link" type="submit" id="signIn">Sign-In</a>
+        </li>
+    </ul>
+    {% endif %}
+</nav>
 
 {% endblock %}

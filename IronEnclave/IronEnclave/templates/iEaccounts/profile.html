@@ -2,23 +2,44 @@
 
 {% block content %}
 
-<h1><a href="http://localhost:8000/home/">IRON ENCLAVE</a></h1>
+<div class="jumbotron jumbotron-fluid" id="jumbo">
+  <div class="container" id="choice">
+    <h1><a href="http://localhost:8000/home/">IRON ENCLAVE</a></h1>
+    <h3 style="text-align: center">My Profile</h3>
+  </div>
+</div>
 
-<form action="{% url 'iEaccounts:logout' %}">
-  <button type="submit" id="logOut">Log-Out</button>
-</form>
+<nav class="navbar navbar-dark bg-dark" id="darkNav">
+  <a class="navbar-brand" href="http://localhost:8000/home/" id="homeTag">IE Home</a>
+  {% if user.is_authenticated %}
+  <ul class="navbar-nav navbar-right">
+      <li class="nav-item">
+              <a href="{% url 'iEaccounts:logout' %}" class="nav-link" type="submit" id="logOut">Log-Out</a>
+      </li>
+  </ul>
+
+  {% else %}
+  <ul class="navbar-nav navbar-right">
+      <li class="nav-item float-right">
+          <a href="{% url 'iEaccounts:login_page' %}" class="nav-link" type="submit" id="signIn">Sign-In</a>
+      </li>
+  </ul>
+  {% endif %}
+</nav>
 
 <div id="profile" class="container">
-  <img src="{{ prof_mod.profile_img.url }}" width="200px">
-  <h1>Name: {{ prof_mod.first_name }} {{ prof_mod.last_name }}</h1>
-  <h1>Age: {{ prof_mod.age }}</h1>
-  <h1>Bio: {{ prof_mod.bio }}</h1>
-  <h1>Gender: {{ prof_mod.gender }}</h1>
-  <h1>Weight Class: {{ prof_mod.weight_class }}</h1>
+  <img id="profile_img" src="{{ prof_mod.profile_img.url }}" width="200px">
+  <div class="container">
+    <h1>Name: {{ prof_mod.first_name }} {{ prof_mod.last_name }}</h1>
+    <h1>Age: {{ prof_mod.age }}</h1>
+    <h1>Bio: {{ prof_mod.bio }}</h1>
+    <h1>Gender: {{ prof_mod.gender }}</h1>
+    <h1>Weight Class: {{ prof_mod.weight_class }}</h1>
+  </div>
   <!-- <h1>Graph: {{ graph_mod }}</h1> -->
   <canvas id="myChart" width="100" height="75"></canvas>
-  <canvas id="benchChart" width="300" height="250"></canvas>
-  <canvas id="deadChart" width="300" height="250"></canvas>
+  <!-- <canvas id="benchChart" width="300" height="250"></canvas>
+  <canvas id="deadChart" width="300" height="250"></canvas> -->
 </div>
 
 <!-- {% for book in borrowed_books %}
@@ -31,6 +52,3 @@
 
 {% endblock %}
 
-<form id="signInForm" action="{% url 'iEaccounts:login_page' %}">
-  <button type="submit" id="signIn">Sign-In</button>
-</form>

@@ -6,24 +6,27 @@
 <div class="jumbotron jumbotron-fluid" id="jumbo">
     <div class="container" id="choice">
       <h1><a href="http://localhost:8000/home/">IRON ENCLAVE</a></h1>
+      <h3 style="text-align: center">Resources</h3>
     </div>
 </div>
 
-<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" id="darkNav">
-    <a class="navbar-brand" href="http://localhost:8000/home/">IE Home</a>
+<nav class="navbar navbar-dark bg-dark" id="darkNav">
+    <a class="navbar-brand" href="http://localhost:8000/home/" id="homeTag">IE Home</a>
     {% if user.is_authenticated %}
-    <form action="{% url 'iEaccounts:logout' %}">
-        {% csrf_token %}
-        <button type="submit" id="logOut">Log-Out</button>
-    </form>
-    {% else %}
-    <form id="signInForm" action="{% url 'iEaccounts:login_page' %}" class="form-inline my-2 my-lg-0">
-        {% csrf_token %}
-        <button type="submit" id="signIn">Sign-In</button>
-    </form>
-    {% endif %}
-  </nav>
+    <ul class="navbar-nav navbar-right">
+        <li class="nav-item">
+                <a href="{% url 'iEaccounts:logout' %}" class="nav-link" type="submit" id="logOut">Log-Out</a>
+        </li>
+    </ul>
 
+    {% else %}
+    <ul class="navbar-nav navbar-right">
+        <li class="nav-item float-right">
+            <a href="{% url 'iEaccounts:login_page' %}" class="nav-link" type="submit" id="signIn">Sign-In</a>
+        </li>
+    </ul>
+    {% endif %}
+</nav>
 
 <div class="container" id="resDropdowns">
     <div class="btn-group" role="group">
@@ -58,14 +61,10 @@
         Articles
         </button>
         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
+        <a class="dropdown-item" href="http://www.ironradio.org/Written_Articles.htm">Iron Radio Articles</a>
+        <a class="dropdown-item" href="https://scholar.google.com/citations?user=ReXrc5cAAAAJ&hl=en&oi=ao">Schoenfeld(Hypertrophy Expert)</a>
+        <a class="dropdown-item" href="https://www.t-nation.com/all-articles">T-Nation Articles</a>
+        <a class="dropdown-item" href="https://www.strongerbyscience.com/articles/">Stronger by Science Articles</a>
         </div>
     </div>
 
@@ -77,6 +76,9 @@
         <a class="dropdown-item" href="http://www.ironradio.org/Contrib_Readings.htm">Iron Radio</a>
         <a class="dropdown-item" href="https://podcasts.apple.com/us/podcast/50-facts/id710541646">50% Facts</a>
         <a class="dropdown-item" href="https://startingstrength.com/video/podcast">Starting Strength Podcast</a>
+        <a class="dropdown-item" href="https://ironculture.libsyn.com/">Iron Culture</a>
+        <a class="dropdown-item" href="https://www.sbspod.com/">Stronger by Science Podcast</a>
+        <a class="dropdown-item" href="https://kabukistrength.com/strength-chat/">Strength Chat by Kabuki Strength</a>
         </div>
     </div>
 
@@ -85,14 +87,9 @@
         Equipment
         </button>
         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
+        <a class="dropdown-item" href="https://www.repfitness.com/">Rep Fitness: Power Racks and Weights</a>
+        <a class="dropdown-item" href="https://www.strengthshopusa.com/">Strength Shop: Belts, Singlets, Wraps and Sleeves</a>
+        <a class="dropdown-item" href="https://www.roguefitness.com/">Rogue Fitness: Power Racks and Weights</a>
         </div>
     </div>
 
@@ -101,14 +98,10 @@
         Coaching
         </button>
         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
+        <a class="dropdown-item" href="https://startingstrengthonlinecoaching.com/">Starting Strength</a>
+        <a class="dropdown-item" href="https://barbell-logic.com/online-coaching/">Barbell Logic</a>
+        <a class="dropdown-item" href="https://store.kabukistrength.net/products/virtual-coaching-by-kabuki-strength?cmp_id=8712005694&adg_id=102950096327&kwd=&device=c&gclid=CjwKCAjwrvv3BRAJEiwAhwOdMy1hdYBNGgTaz_WdTh8c2qEArHbekUw4ayIOii9J3fgGgosr8dAUlRoCaRwQAvD_BwE">Kabuki Strength</a>
+        <a class="dropdown-item" href="https://www.jtsstrength.com/online-coaching/?v=7516fd43adaa">Juggernaut Training Systems</a>
         </div>
     </div>
 </div>

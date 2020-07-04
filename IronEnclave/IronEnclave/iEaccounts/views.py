@@ -74,6 +74,12 @@ def user_profile(request):
 
 # POST-Updating profile
 def update_profile(request, id):
+    prof_mod = Profiles.objects.get(user = request.user)
+
+    context = {
+        'prof_mod': prof_mod,
+    }
+
     if request.method == 'POST':
         
         profile = Profiles.objects.get(user = User.objects.get(id = id))

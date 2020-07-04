@@ -7,8 +7,16 @@ body {
 }
 
 #jumbo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-image: url(https://wallpaperaccess.com/full/531304.jpg);
     margin-bottom: 0px;
+}
+
+#jumbo div h3 {
+    margin-left: 200px;
+    margin-right: 200px;
 }
 
 #darkNav {
@@ -44,7 +52,7 @@ body {
     color: whitesmoke;
     font-size: 150px;
     align-self: center;
-    margin-left: 80px;
+    margin-left: 0px;
 }
 
 #choice h2 {
@@ -55,9 +63,10 @@ body {
 }
 
 #choice h3 {
-    font-family: 'Germania One', serif;
+    font-family: Arial, Helvetica, sans-serif;
     color: rgb(211, 203, 203);
-    font-size: 50px;
+    font-size: 40px;
+    margin-left: 0px;
 }
 
 #choice h1 a {
@@ -112,6 +121,10 @@ button:hover {
     color: rgb(170, 184, 189);
 }
 
+#resDropdowns .dropdown-menu {
+    width: 92%;
+}
+
 #sidenav {
     display: flex;
     flex-direction: column;
@@ -155,10 +168,53 @@ button:hover {
     font-size: 20px;
 }
 
+#profile {
+    margin: 20px;
+}
+
+#profile #profile_card {
+    background-color: tomato;
+}
+
+#profile #profile_img {
+    border-radius: 75px;
+}
+
 #profile h1 {
     color: thistle;
 }
 
 .canvas {
     background-color: whitesmoke;
+}
+
+form #updateProf {
+    font-family: 'Germania One', serif;
+    font-size: 30px;
+    margin: 60px;
+}
+
+#updateProForm {
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+    margin-top: 60px;
+    margin-right: 50px;
+}
+
+#updateProForm button {
+    align-self: flex-end;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 20px;
+}
+
+#updateProForm label {
+    color: whitesmoke;
+}
+
+#returnToProfbtn {
+    margin: 100px;
+    font-size: 20px;
+    float: right;
 }

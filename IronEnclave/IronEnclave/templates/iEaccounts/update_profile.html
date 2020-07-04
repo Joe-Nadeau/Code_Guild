@@ -2,20 +2,20 @@
 
 {% block content %}
 
-<form action="{% url 'iEaccounts:update_profile' user.id %}" method="POST">
+<div id="updateProForm" class="container" >
+    <form action="{% url 'iEaccounts:update_profile' user.id %}" method="POST">
     {% csrf_token %}
-    <div>
         <div>
             <label for="inputFname">First Name:</label>
-            <input type="text" class="form-control" id="inputFname" name="first_name">
+            <input type="text" class="form-control" id="inputFname" name="first_name" value="First Name">
         </div>
         <div>
             <label for="inputLname">Last Name:</label>
-            <input type="text" class="form-control" id="inputLname" name="last_name">
+            <input type="text" class="form-control" id="inputLname" name="last_name" value="Last Name">
         </div>
         <div>
             <label for="inputAge">Age:</label>
-            <input type="text" class="form-control" id="inputAge" name="age">
+            <input type="text" class="form-control" id="inputAge" name="age" value="Age">
         </div>
         <div>
             <label for="inputImg">Profile Image:</label>
@@ -23,11 +23,11 @@
         </div>
         <div>
             <label for="inputBio">Bio:</label>
-            <input type="text" class="form-control" id="inputBio" name="bio">
+            <input type="text" class="form-control" id="inputBio" name="bio" value="lorem ipsum">
         </div>
         <div>
             <label for="inputGender">Gender:</label>
-            <input type="text" class="form-control" id="inputGender" name="gender">
+            <input type="text" class="form-control" id="inputGender" name="gender" value="Gender">
         </div>
         <div>
             <select name="weight_class" id="weightClass">
@@ -36,11 +36,11 @@
                 {% endfor %}
             </select>
         </div>
-    </div>
     <button type="submit" class="btn btn-success">Save Changes</button>
-</form>
+    </form>
+</div>
 
-<button>
+<button id='returnToProfbtn'>
     <a href="http://localhost:8000/iEaccounts/profile/">Return to my Profile</a>
 </button>
 
