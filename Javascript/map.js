@@ -44,11 +44,12 @@ axios.get(url)
             const state = data.location.state;
             const city = data.location.city;
             const street_name = data.location.street.name;
+            const street_number = data.location.street.number;
 
             console.log(data)
 
             L.marker([latitude, longitude]).addTo(mymap)
-            .bindPopup(`${first_name} ${last_name} <b> ${country} <b> ${state} <b> ${city} <b> ${street_name}`)
+            .bindPopup(`<b>${first_name} ${last_name}</b> <br> ${country} <br> ${state} <br> ${city} <br> ${street_name} <br> ${street_number}`)
             .openPopup();
     }
 })

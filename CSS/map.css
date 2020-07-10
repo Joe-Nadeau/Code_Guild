@@ -1,9 +1,23 @@
+#BigWorld {
+    display: flex;
+    background-color: khaki;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 #mapid { 
-    height: 400px;
-    width: 400px;
+    height: 700px;
+    width: 950px;
+    margin-bottom: 100px;
 }
 
 h1 {
-    background-color: blue;
-    width: 400px;
+    text-align: center;
+    font-family: fantasy;
+    font-size: 100px;
+    color: lavender;
+    background-color: rgb(155, 155, 224);
+    width: 800px;
+    margin: 10px;
 }
