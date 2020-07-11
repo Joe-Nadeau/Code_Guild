@@ -9,7 +9,8 @@
 #mapid { 
     height: 700px;
     width: 950px;
-    margin-bottom: 100px;
+    margin-bottom: 40px;
+    border-radius: 12px;
 }
 
 h1 {
@@ -20,4 +21,14 @@ h1 {
     background-color: rgb(155, 155, 224);
     width: 800px;
     margin: 10px;
+    border-radius: 12px;
+}
+
+#users {
+    margin: 20px;
+    padding: 20px;
+    width: 90%;
+    border-radius: 8px;
+    background-color: lightcoral;
+    align-self: flex-start;
 }

@@ -30,10 +30,11 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 // getLocationOfUsers();
 
 
-
+// axios get request and response to display data on html page
 axios.get(url)
     .then((response) => { 
 
+        // for loop iterates through data asigning the data to variables.
         for (i = 0; i < 11; i++) {
             const data = response.data.results[i];
             const latitude = data.location.coordinates.latitude;
@@ -45,12 +46,20 @@ axios.get(url)
             const city = data.location.city;
             const street_name = data.location.street.name;
             const street_number = data.location.street.number;
+            const username = data.login.username;
+            const email = data.email;
 
+            // Displays the data in the console
             console.log(data)
 
+            // Markers according to each user's latitude and longitude. .bindPopup adds the data in the above variables to a new location marker each time the for loop runs
             L.marker([latitude, longitude]).addTo(mymap)
             .bindPopup(`<b>${first_name} ${last_name}</b> <br> ${country} <br> ${state} <br> ${city} <br> ${street_name} <br> ${street_number}`)
             .openPopup();
+
+            // DOM Manipulation to alter text inside of 'users' <div> to display user information on the page outside of the map.
+            document.getElementById('users').innerHTML += '<br><b>Name:</b>'+first_name+' '+last_name+' <b>Username:</b>'+username+' <b>Email:</b>'+email;
     }
 })
+    // logs errors in the console to help with debugging
     .catch((err) => console.log(err))
