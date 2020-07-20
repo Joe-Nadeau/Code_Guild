@@ -54,6 +54,10 @@ body, html {
   border-radius: 8px;
 }
 
+.bg ul li {
+  color: aliceblue;
+}
+
 label {
   color: rgb(221, 117, 117) ;
   font-size: 20px;
