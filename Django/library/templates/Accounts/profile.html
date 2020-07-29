@@ -34,8 +34,9 @@
   <ul>
     {% for book in borrowed_books %}
       <li>{{ book.title }}</li> 
-      <form action="">
-        <button>Return to Library</button>
+      <form method = "POST" action="{% url 'library_app:return_book' book.id %}">
+        {% csrf_token %}
+        <button type = submit>Return to Library</button>
       </form>
     {% endfor %}
   </ul>
